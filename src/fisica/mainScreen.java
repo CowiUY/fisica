@@ -42,8 +42,9 @@ public class mainScreen extends javax.swing.JFrame {
         jButton1.setPreferredSize(new java.awt.Dimension(250, 55));
 
         jButton2.setText("jButton2");
+        jButton2.setPreferredSize(new java.awt.Dimension(250, 55));
 
-        jLabel2.setText("hola papa");
+        jLabel2.setText("Aiban");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -57,7 +58,7 @@ public class mainScreen extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(481, 481, 481)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton2)
+                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(180, 180, 180)
@@ -74,8 +75,8 @@ public class mainScreen extends javax.swing.JFrame {
                 .addGap(208, 208, 208)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(95, 95, 95)
-                .addComponent(jButton2)
-                .addContainerGap(59, Short.MAX_VALUE))
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         pack();
