@@ -44,7 +44,7 @@ public class mainScreen extends javax.swing.JFrame {
         jButton2.setText("jButton2");
         jButton2.setPreferredSize(new java.awt.Dimension(250, 55));
 
-        jLabel2.setText("Aiban");
+        jLabel2.setText("Prueba13");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
