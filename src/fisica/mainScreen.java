@@ -33,7 +33,7 @@ public class mainScreen extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 48)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Calculadora entre cargas");
 
@@ -81,9 +81,9 @@ public class mainScreen extends javax.swing.JFrame {
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         // TODO add your handling code here:
-        //calculator();
+        
         dispose();
-        calculator pagCalculator = new calculator();
+        cargaEjercida pagCalculator = new cargaEjercida();
         pagCalculator.setVisible(true);
     }//GEN-LAST:event_btnCalcularActionPerformed
 
