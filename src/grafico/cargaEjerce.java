@@ -214,7 +214,20 @@ public class cargaEjerce extends javax.swing.JFrame {
             //FUNCION Q;
             
         double rqq = Double.parseDouble(txtRQQ.getText());
+        double pciarqq = Double.parseDouble(pciaRQQ.getText());
+        
         double qq = Double.parseDouble(txtQQ.getText());
+        double pciaqq = Double.parseDouble(pciaQQ.getText());
+        
+        System.out.println(masa);
+            
+            for (int i = (int) masaPotencia; i > 0; i--){
+                masa = masa * 10;
+                System.out.println(masa);
+            }
+            
+            System.out.println(masa);
+        
         
         
         funcionQ(rqq,qq);
@@ -226,6 +239,9 @@ public class cargaEjerce extends javax.swing.JFrame {
         double qq = Double.parseDouble(txtQQ.getText());    
         }else{
             //FUNCION QQ;
+            double q = Double.parseDouble(txtQ.getText());    
+            double rqq = Double.parseDouble(txtRQQ.getText());    
+            
         }
         
         //JOptionPane.showMessageDialog(rootPane, btngroup.getSelection().getActionCommand());

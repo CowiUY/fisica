@@ -4,8 +4,8 @@
  * and open the template in the editor.
  */
 package grafico;
-
 /**
+
  *
  * @author Gabriel
  */
@@ -82,6 +82,7 @@ public class mainScreen extends javax.swing.JFrame {
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         // TODO add your handling code here:
+        
         
         dispose();
         cargaEjercida pagCalculator = new cargaEjercida();

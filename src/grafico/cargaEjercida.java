@@ -4,12 +4,16 @@
  * and open the template in the editor.
  */
 package grafico;
+import logica.potencia;
+
+
 
 /**
  *
  * @author Gabriel
  */
 public class cargaEjercida extends javax.swing.JFrame {
+    potencia p = new potencia();
 
     /**
      * Creates new form calculator
@@ -163,9 +167,35 @@ public class cargaEjercida extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         
-        //if (btngroup.){
+        
+        
+        if (btnMasa.isSelected()){
+            double masa = Double.parseDouble(txtMasa.getText());
+            double masaPotencia = Double.parseDouble(pciaMasa.getText());
             
-        //}
+            
+            masa = p.potencia(masa, masaPotencia);
+            
+            
+            //masa = Math.pow(masa, masaPotencia);
+            
+            System.out.println(masa);
+            
+            
+        }else{
+            double carga = Double.parseDouble(txtCarga.getText());
+            double masaCarga = Double.parseDouble(pciaCarga.getText());
+                System.out.println(carga);
+            
+            for (int i = (int) masaCarga; i > 0; i--){
+                carga = carga * 10;
+                System.out.println(carga);
+            }
+            
+            System.out.println(carga);
+        }
+            
+        
         
         dispose();
         cargaEjerce pantallaEjerce = new cargaEjerce(); 
