@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package grafico;
-import logica.potencia;
+import logica.calculos;
 
 
 
@@ -13,7 +13,7 @@ import logica.potencia;
  * @author Gabriel
  */
 public class cargaEjercida extends javax.swing.JFrame {
-    potencia p = new potencia();
+    calculos c = new calculos();
 
     /**
      * Creates new form calculator
@@ -170,29 +170,17 @@ public class cargaEjercida extends javax.swing.JFrame {
         
         
         if (btnMasa.isSelected()){
-            double masa = Double.parseDouble(txtMasa.getText());
-            double masaPotencia = Double.parseDouble(pciaMasa.getText());
             
             
-            masa = p.potencia(masa, masaPotencia);
+            
+            double masa = c.potencia(Double.parseDouble(txtMasa.getText()), Double.parseDouble(pciaMasa.getText()));
             
             
-            //masa = Math.pow(masa, masaPotencia);
-            
-            System.out.println(masa);
             
             
         }else{
-            double carga = Double.parseDouble(txtCarga.getText());
-            double masaCarga = Double.parseDouble(pciaCarga.getText());
-                System.out.println(carga);
             
-            for (int i = (int) masaCarga; i > 0; i--){
-                carga = carga * 10;
-                System.out.println(carga);
-            }
-            
-            System.out.println(carga);
+            double carga = c.potencia(Double.parseDouble(txtCarga.getText()), Double.parseDouble(pciaCarga.getText()));
         }
             
         

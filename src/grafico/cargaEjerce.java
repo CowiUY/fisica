@@ -6,6 +6,7 @@
 package grafico;
 
 import javax.swing.JOptionPane;
+import logica.calculos;
 
 /**
  *
@@ -13,6 +14,8 @@ import javax.swing.JOptionPane;
  */
 public class cargaEjerce extends javax.swing.JFrame {
 
+    calculos c = new calculos();
+    
     /**
      * Creates new form cargaEjerce
      */
@@ -211,7 +214,7 @@ public class cargaEjerce extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         if (btnQ.isSelected()){
-            //FUNCION Q;
+            
             
         double rqq = Double.parseDouble(txtRQQ.getText());
         double pciarqq = Double.parseDouble(pciaRQQ.getText());
@@ -219,32 +222,65 @@ public class cargaEjerce extends javax.swing.JFrame {
         double qq = Double.parseDouble(txtQQ.getText());
         double pciaqq = Double.parseDouble(pciaQQ.getText());
         
-        System.out.println(masa);
-            
-            for (int i = (int) masaPotencia; i > 0; i--){
-                masa = masa * 10;
-                System.out.println(masa);
-            }
-            
-            System.out.println(masa);
+        
+        double finalrqq = c.potencia(rqq, pciarqq);
+        
+        double finalqq = c.potencia(qq, pciaqq);
         
         
+            System.out.println(finalrqq);
+            System.out.println(finalqq);
         
-        funcionQ(rqq,qq);
+        
         
         }else if (btnRQQ.isSelected()){
             //FUNCION RQQ;
         
         double q = Double.parseDouble(txtQ.getText());    
-        double qq = Double.parseDouble(txtQQ.getText());    
+        double qq = Double.parseDouble(txtQQ.getText());  
+        
+        
+        
+        double pciaq = Double.parseDouble(pciaQ.getText());    
+        double pciaqq = Double.parseDouble(pciaQQ.getText());  
+        
+        
+        
+        
+        double finalq = c.potencia(q, pciaq);
+        double finalqq = c.potencia(qq, pciaqq);
+        
+        
+            System.out.println(finalq);
+            System.out.println(finalqq);
+        
+        
+        
+        
+        
+        
+        
         }else{
             //FUNCION QQ;
             double q = Double.parseDouble(txtQ.getText());    
             double rqq = Double.parseDouble(txtRQQ.getText());    
             
+            
+            
+            double pciaq = Double.parseDouble(pciaQ.getText());    
+            double pciarqq = Double.parseDouble(pciaRQQ.getText());    
+            
+            
+            double finalq = c.potencia(q,pciaq);
+            double finalrqq = c.potencia(rqq,pciarqq);
+            
+            System.out.println(finalq);
+            System.out.println(finalrqq);
+            
         }
         
-        //JOptionPane.showMessageDialog(rootPane, btngroup.getSelection().getActionCommand());
+        
+        
         
         dispose();
         results pantallaResults = new results();
@@ -305,19 +341,7 @@ public class cargaEjerce extends javax.swing.JFrame {
     
     
     
-    double funcionQ(double rqq, double qq) {
-        
-        return 5.0;
-    }
-    
-    double funcionRQQ(double q, double rr){
-        return 5.0;
-    }
-        
-    double funcionQQ(double q, double rqq){
-        return 5.0;
-    }
-
+   
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton btnQ;
     private javax.swing.JRadioButton btnQQ;

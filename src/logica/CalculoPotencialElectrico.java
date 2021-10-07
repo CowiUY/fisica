@@ -1,6 +1,6 @@
 package logica;
 
-public class CalculoPotencialElectrico extends Calculo{
+public class CalculoPotencialElectrico extends unidades{
 
     public CalculoPotencialElectrico(int Q1, int Q2, int Q3, double DistanciaQ1Q2, double DistanciaPtoQ1, double DistanciaPtoQ2) {
         super(Q1, Q2, Q3, DistanciaQ1Q2, DistanciaPtoQ1, DistanciaPtoQ2);
