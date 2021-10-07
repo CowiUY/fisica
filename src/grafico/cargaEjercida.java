@@ -4,6 +4,10 @@
  * and open the template in the editor.
  */
 package grafico;
+import java.awt.Graphics;
+import java.awt.Image;
+import javax.swing.ImageIcon;
+import javax.swing.JPanel;
 import logica.calculos;
 
 
@@ -13,12 +17,14 @@ import logica.calculos;
  * @author Gabriel
  */
 public class cargaEjercida extends javax.swing.JFrame {
+    FondoPanel fondo = new FondoPanel();
     calculos c = new calculos();
 
     /**
      * Creates new form calculator
      */
     public cargaEjercida() {
+         this.setContentPane(fondo);
         initComponents();
     }
 
@@ -251,4 +257,19 @@ public class cargaEjercida extends javax.swing.JFrame {
     private javax.swing.JTextField txtCarga;
     private javax.swing.JTextField txtMasa;
     // End of variables declaration//GEN-END:variables
+
+class FondoPanel extends JPanel
+{
+    private Image imagen;
+    @Override
+    public void paint(Graphics g){
+        imagen = new ImageIcon(getClass().getResource("/imagen/maxresdefault.jpg")).getImage();
+       g.drawImage(imagen, 0, 0, getWidth(), getHeight(), this);
+       setOpaque(false);
+       
+       super.paint(g);
+    }
+            
+}  
+
 }

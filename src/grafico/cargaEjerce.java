@@ -5,21 +5,29 @@
  */
 package grafico;
 
+import java.awt.Color;
 import javax.swing.JOptionPane;
 import logica.calculos;
+import java.awt.Graphics;
+import java.awt.Image;
+import javax.swing.ImageIcon;
+import javax.swing.JPanel;
+
 
 /**
  *
  * @author Gabriel
  */
 public class cargaEjerce extends javax.swing.JFrame {
-
+FondoPanel fondo = new FondoPanel();
     calculos c = new calculos();
     
     /**
      * Creates new form cargaEjerce
      */
     public cargaEjerce() {
+        
+         this.setContentPane(fondo);
         initComponents();
     }
 
@@ -33,275 +41,118 @@ public class cargaEjerce extends javax.swing.JFrame {
     private void initComponents() {
 
         javax.swing.ButtonGroup btngroup = new javax.swing.ButtonGroup();
-        btnQQ = new javax.swing.JRadioButton();
-        pciaQ = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        pciaQQ = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        txtQQ = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        btnSiguiente = new javax.swing.JButton();
-        txtQ = new javax.swing.JTextField();
-        btnQ = new javax.swing.JRadioButton();
-        btnRQQ = new javax.swing.JRadioButton();
-        pciaRQQ = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        txtRQQ = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jTextField6 = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1384, 677));
         setSize(new java.awt.Dimension(1384, 677));
 
-        btngroup.add(btnQQ);
-        btnQQ.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        btnQQ.setText("       (q-Q):");
-        btnQQ.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnQQActionPerformed(evt);
-            }
-        });
-
-        pciaQ.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        pciaQ.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pciaQActionPerformed(evt);
-            }
-        });
-
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel2.setText("X 10 ^");
-
-        pciaQQ.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel3.setText("X 10 ^");
-
-        txtQQ.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
-        jLabel1.setText("Datos sobre la carga que ejerce");
+        jLabel1.setForeground(new java.awt.Color(255, 255, 0));
+        jLabel1.setText("Datos sobre la/s carga que ejerce/n");
 
-        btnSiguiente.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnSiguiente.setText("Siguiente");
-        btnSiguiente.addActionListener(new java.awt.event.ActionListener() {
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 0));
+        jLabel2.setText("Carga 1:");
+
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSiguienteActionPerformed(evt);
+                jTextField1ActionPerformed(evt);
             }
         });
 
-        txtQ.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        txtQ.addActionListener(new java.awt.event.ActionListener() {
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 0));
+        jLabel5.setText("Distancia entre la carga y el punto:");
+
+        jTextField6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtQActionPerformed(evt);
+                jTextField6ActionPerformed(evt);
             }
         });
 
-        btngroup.add(btnQ);
-        btnQ.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        btnQ.setText("       Q:");
-        btnQ.addActionListener(new java.awt.event.ActionListener() {
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(102, 255, 102));
+        jLabel8.setText("m");
+
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+        jButton1.setText("Siguiente");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnQActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
 
-        btngroup.add(btnRQQ);
-        btnRQQ.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        btnRQQ.setText("       r (q-Q):");
-        btnRQQ.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRQQActionPerformed(evt);
-            }
-        });
-
-        pciaRQQ.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel4.setText("X 10 ^");
-
-        txtRQQ.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        txtRQQ.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtRQQActionPerformed(evt);
-            }
-        });
+        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 0));
+        jLabel10.setText("C");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(46, 46, 46)
+                .addContainerGap(234, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnQ, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnRQQ)
-                    .addComponent(btnQQ))
-                .addGap(65, 65, 65)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 806, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabel4)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(txtQ, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(176, 176, 176)
-                                .addComponent(jLabel2))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(txtQQ, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel3)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(35, 35, 35)
-                                .addComponent(pciaQ, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(43, 43, 43)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(pciaRQQ, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(pciaQQ, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addComponent(txtRQQ, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(338, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnSiguiente, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(85, 85, 85))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButton1)
+                            .addComponent(jLabel5))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 910, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(240, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(35, 35, 35)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(155, 155, 155)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnQ)
-                    .addComponent(pciaQ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtQ, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addGap(73, 73, 73)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtRQQ, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnRQQ)
-                    .addComponent(jLabel4)
-                    .addComponent(pciaRQQ, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 103, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(74, 74, 74)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnQQ)
-                            .addComponent(txtQQ, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(85, 85, 85)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3)
-                            .addComponent(pciaQQ, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
-                .addComponent(btnSiguiente, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43))
+                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 130, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jTextField6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(185, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnQQActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQQActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnQQActionPerformed
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handlingjLabel1.SetForeground(Color.GREEN); code here:
+        
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
-    private void pciaQActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pciaQActionPerformed
+    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_pciaQActionPerformed
+    }//GEN-LAST:event_jTextField6ActionPerformed
 
-    private void btnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguienteActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        
-        if (btnQ.isSelected()){
-            
-            
-        double rqq = Double.parseDouble(txtRQQ.getText());
-        double pciarqq = Double.parseDouble(pciaRQQ.getText());
-        
-        double qq = Double.parseDouble(txtQQ.getText());
-        double pciaqq = Double.parseDouble(pciaQQ.getText());
-        
-        
-        double finalrqq = c.potencia(rqq, pciarqq);
-        
-        double finalqq = c.potencia(qq, pciaqq);
-        
-        
-            System.out.println(finalrqq);
-            System.out.println(finalqq);
-        
-        
-        
-        }else if (btnRQQ.isSelected()){
-            //FUNCION RQQ;
-        
-        double q = Double.parseDouble(txtQ.getText());    
-        double qq = Double.parseDouble(txtQQ.getText());  
-        
-        
-        
-        double pciaq = Double.parseDouble(pciaQ.getText());    
-        double pciaqq = Double.parseDouble(pciaQQ.getText());  
-        
-        
-        
-        
-        double finalq = c.potencia(q, pciaq);
-        double finalqq = c.potencia(qq, pciaqq);
-        
-        
-            System.out.println(finalq);
-            System.out.println(finalqq);
-        
-        
-        
-        
-        
-        
-        
-        }else{
-            //FUNCION QQ;
-            double q = Double.parseDouble(txtQ.getText());    
-            double rqq = Double.parseDouble(txtRQQ.getText());    
-            
-            
-            
-            double pciaq = Double.parseDouble(pciaQ.getText());    
-            double pciarqq = Double.parseDouble(pciaRQQ.getText());    
-            
-            
-            double finalq = c.potencia(q,pciaq);
-            double finalrqq = c.potencia(rqq,pciarqq);
-            
-            System.out.println(finalq);
-            System.out.println(finalrqq);
-            
-        }
-        
-        
-        
-        
-        dispose();
-        results pantallaResults = new results();
-        pantallaResults.setVisible(true);
-    }//GEN-LAST:event_btnSiguienteActionPerformed
-
-    private void txtQActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtQActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtQActionPerformed
-
-    private void btnQActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnQActionPerformed
-
-    private void btnRQQActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRQQActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnRQQActionPerformed
-
-    private void txtRQQActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRQQActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtRQQActionPerformed
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -343,19 +194,27 @@ public class cargaEjerce extends javax.swing.JFrame {
     
    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JRadioButton btnQ;
-    private javax.swing.JRadioButton btnQQ;
-    private javax.swing.JRadioButton btnRQQ;
-    private javax.swing.JButton btnSiguiente;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JTextField pciaQ;
-    private javax.swing.JTextField pciaQQ;
-    private javax.swing.JTextField pciaRQQ;
-    private javax.swing.JTextField txtQ;
-    private javax.swing.JTextField txtQQ;
-    private javax.swing.JTextField txtRQQ;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField6;
     // End of variables declaration//GEN-END:variables
+class FondoPanel extends JPanel
+{
+    private Image imagen;
+    @Override
+    public void paint(Graphics g){
+        imagen = new ImageIcon(getClass().getResource("/imagen/maxresdefault.jpg")).getImage();
+       g.drawImage(imagen, 0, 0, getWidth(), getHeight(), this);
+       setOpaque(false);
+       
+       super.paint(g);
+    }
+            
+}  
+
 }
