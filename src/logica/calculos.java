@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 public class calculos {
     
-public static void main(String[] args) {
+//public static void main(String[] args) {
     //String queda el . de double
     // Decimales a CS
     //public double pasarCS(int number){
@@ -21,7 +21,7 @@ public static void main(String[] args) {
         return Angulo;
     }
     
-<<<<<<< HEAD
+
     //Metodo que devuelve el lado opuesto al Angulo
     public double TeoremaCosenoUnLado(double Lado1, double Lado2, double Angulo){
         double AnguloRadios = Math.toRadians(Angulo);
@@ -30,15 +30,15 @@ public static void main(String[] args) {
         
         return Lado3;
     }
-=======
+
     
     
     double intogor = 816;
-        System.out.println(intogor);
+        //System.out.println(intogor);
         
         
         
-        int bonjour = Everdad(intogor);
+        //int bonjour = Everdad(intogor);
         
         
         
@@ -46,7 +46,7 @@ public static void main(String[] args) {
         
         
         
-        if ( bonjour == 0){
+        /*if ( bonjour == 0){
             System.out.println("NO TIENE E, VERIFICAR...");
             System.out.println(intogor);
             
@@ -84,10 +84,9 @@ public static void main(String[] args) {
             
         
         
-        }   
+        } */  
         
         
-    }
     
     
     
@@ -97,7 +96,8 @@ public static void main(String[] args) {
     
     
     
-        static int Everdad(double number){
+    
+         int Everdad(double number){ //static
     int denominador = 0;
     String lucio = ""+number;
     System.out.println("LUCIO LENGTH");
@@ -177,7 +177,7 @@ static int robertogomez(double number){
     
     
     
->>>>>>> d9874c0dd8d0e7f8f7cda2d2c6e802c45580bffe
+
     
     // CS a decimales
     public double potencia(double unit,double  potencia){
@@ -195,7 +195,7 @@ static int robertogomez(double number){
 
 
 
-
-
 }
+
+
 
