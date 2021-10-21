@@ -4,6 +4,8 @@ import java.math.BigDecimal;
 
 public class calculos {
     
+    //LOS MÉTODOS LOS PONEMOS UpperCamelCase, TODOS LOS INICIOS DE PALABRA CON MAYÚSCULAS :)
+    
 //public static void main(String[] args) {
     //String queda el . de double
     // Decimales a CS
@@ -12,6 +14,13 @@ public class calculos {
     //}
     
     //Metodo que devuelve el angulo opuesto al Lado 1
+    
+    public double FuerzaElectrica(){
+     
+        return 0.5;
+    }
+            
+            
     public double TeoremaCosenoAngulos(double Lado1, double Lado2, double Lado3){
         double Angulo;
         
@@ -33,7 +42,7 @@ public class calculos {
 
     
     
-    double intogor = 816;
+    //double intogor = 816;
         //System.out.println(intogor);
         
         
@@ -43,8 +52,9 @@ public class calculos {
         
         
 
-        
-        
+    //LEER ==>    
+        //IVÁN ESTO HAY QUE IMPORTARLO AL CÓDIGO 
+    
         
         /*if ( bonjour == 0){
             System.out.println("NO TIENE E, VERIFICAR...");
@@ -87,6 +97,8 @@ public class calculos {
         } */  
         
         
+    //HASTA ACÁ, GRACIAS AIBAN POR LA ATENCIÓN 
+    //LEER HASTA ACÁ <==
     
     
     
@@ -95,8 +107,7 @@ public class calculos {
     
     
     
-    
-    
+    //Se fija si hay una E en el double
          int Everdad(double number){ //static
     int denominador = 0;
     String lucio = ""+number;
@@ -144,7 +155,7 @@ public class calculos {
 
     
     //Si el número es 0.algo...
-static int robertogomez(double number){
+static int RobertoGomez(double number){
     String etrin = ""+number;
     int vueltas = 0;
     System.out.println();
@@ -180,7 +191,7 @@ static int robertogomez(double number){
 
     
     // CS a decimales
-    public double potencia(double unit,double  potencia){
+    public double Potencia(double unit,double  potencia){
         for(double i = potencia; i >0; i--){
             unit = unit * 10;
         }

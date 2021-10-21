@@ -179,14 +179,14 @@ public class cargaEjercida extends javax.swing.JFrame {
             
             
             
-            double masa = c.potencia(Double.parseDouble(txtMasa.getText()), Double.parseDouble(pciaMasa.getText()));
+            double masa = c.Potencia(Double.parseDouble(txtMasa.getText()), Double.parseDouble(pciaMasa.getText()));
             
             
             
             
         }else{
             
-            double carga = c.potencia(Double.parseDouble(txtCarga.getText()), Double.parseDouble(pciaCarga.getText()));
+            double carga = c.Potencia(Double.parseDouble(txtCarga.getText()), Double.parseDouble(pciaCarga.getText()));
         }
             
         
