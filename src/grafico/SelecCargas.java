@@ -47,7 +47,7 @@ public class SelecCargas extends javax.swing.JFrame {
 
         jComboBox1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jComboBox1.setForeground(new java.awt.Color(255, 255, 0));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " 1", " 2", " 3" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -56,6 +56,11 @@ public class SelecCargas extends javax.swing.JFrame {
 
         jToggleButton1.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
         jToggleButton1.setText("Siguiente");
+        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -90,6 +95,29 @@ public class SelecCargas extends javax.swing.JFrame {
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+        // TODO add your handling code here:
+        
+        String itemSeleccionado = (String)jComboBox1.getSelectedItem();
+ 
+        if (itemSeleccionado == "1"){
+            System.out.println("FUNCIONAAAA\n1");
+            cargaEjerce pagCargaEjerce1 = new cargaEjerce();
+            dispose();
+            pagCargaEjerce1.setVisible(true);
+        }else if(itemSeleccionado == "2"){
+            System.out.println("FUNCIONAAAA\n2");
+            cargaEjerce2Select pagCargaEjerce2 = new cargaEjerce2Select();
+            dispose();
+            pagCargaEjerce2.setVisible(true);
+        }else if (itemSeleccionado == "3"){
+            System.out.println("FUNCIONAAAA\n3");
+            cargaEjerce3Select pagCargaEjerce3 = new cargaEjerce3Select();
+            dispose();
+            pagCargaEjerce3.setVisible(true);
+        }
+    }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     /**
      * @param args the command line arguments
