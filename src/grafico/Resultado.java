@@ -15,11 +15,13 @@ import javax.swing.JPanel;
  * @author Iván Royes, Gabriel Moreira, Nicolás Mora
  */
 public class Resultado extends javax.swing.JFrame {
+FondoPanel fondo = new FondoPanel();
 
     /**
      * Creates new form Resultado
      */
     public Resultado() {
+        this.setContentPane(fondo);
         initComponents();
     }
 
