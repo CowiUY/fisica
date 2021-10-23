@@ -9,12 +9,22 @@ package grafico;
  *
  * @author Gabriel
  */
+
+import java.awt.Color;
+import javax.swing.JOptionPane;
+import logica.calculos;
+import java.awt.Graphics;
+import java.awt.Image;
+import javax.swing.ImageIcon;
+import javax.swing.JPanel;
 public class cargaEjerce2Select extends javax.swing.JFrame {
+    FondoPanel fondo = new FondoPanel();
 
     /**
      * Creates new form ola
      */
     public cargaEjerce2Select() {
+        this.setContentPane(fondo);
         initComponents();
     }
 
@@ -312,4 +322,18 @@ public class cargaEjerce2Select extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField8;
     // End of variables declaration//GEN-END:variables
+
+class FondoPanel extends JPanel
+{
+    private Image imagen;
+    @Override
+    public void paint(Graphics g){
+        imagen = new ImageIcon(getClass().getResource("/imagen/maxresdefault.jpg")).getImage();
+       g.drawImage(imagen, 0, 0, getWidth(), getHeight(), this);
+       setOpaque(false);
+       
+       super.paint(g);
+    }
+            
+}
 }
