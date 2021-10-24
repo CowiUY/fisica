@@ -17,6 +17,7 @@ import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
+import logica.unidades;
 public class cargaEjerce2Select extends javax.swing.JFrame {
     FondoPanel fondo = new FondoPanel();
 
@@ -220,6 +221,21 @@ public class cargaEjerce2Select extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        int carga1 = Integer.parseInt(jTextField1.getText());
+        int carga2 = Integer.parseInt(jTextField2.getText());
+        
+        double distanciaCarga = Double.parseDouble(jTextField6.getText());
+        double distanciaCarga1Q = Double.parseDouble(jTextField8.getText());
+        double distanciaCarga2Q = Double.parseDouble(jTextField10.getText());
+        
+        unidades Pedro = new unidades(carga1, carga2, distanciaCarga, distanciaCarga1Q, distanciaCarga2Q);
+        
+        
+        dispose();
+         
+        Resultados pagResultados = new Resultados();
+        pagResultados.setVisible(true);
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed

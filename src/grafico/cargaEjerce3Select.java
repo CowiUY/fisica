@@ -17,6 +17,7 @@ import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
+import logica.unidades;
 public class cargaEjerce3Select extends javax.swing.JFrame {
 FondoPanel fondo = new FondoPanel();
     /**
@@ -389,6 +390,45 @@ FondoPanel fondo = new FondoPanel();
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        
+        int carga1 = Integer.parseInt(jTextField1.getText());
+        System.out.println(carga1);
+        int carga2 = Integer.parseInt(jTextField7.getText());
+        System.out.println(carga2);
+        int carga3 = Integer.parseInt(jTextField2.getText());
+        System.out.println(carga3);
+        
+        double distanciaCargaQ1Q2 = Double.parseDouble(jTextField6.getText());
+        System.out.println(distanciaCargaQ1Q2);
+        double distanciaCargaQ2Q3 = Double.parseDouble(jTextField4.getText());
+        System.out.println(distanciaCargaQ2Q3);
+        double distanciaCargaQ3Q1 = Double.parseDouble(jTextField5.getText());
+        System.out.println(distanciaCargaQ3Q1);
+        
+        //IF porque con solo 2 basta
+        
+        
+        
+        if ("".equals(jTextField8.getText())){
+        System.out.println("novamoooo");
+    }
+        
+        double distanciaCarga1Q = Double.parseDouble(jTextField8.getText());
+        System.out.println(distanciaCarga1Q);
+        double distanciaCarga2Q = Double.parseDouble(jTextField10.getText());
+        System.out.println(distanciaCarga2Q);
+        double distanciaCarga3Q = Double.parseDouble(jTextField9.getText());
+        System.out.println(distanciaCarga3Q);
+        //Cierro IF
+        
+        
+        unidades Pedro = new unidades(carga1, carga2, carga3, distanciaCargaQ1Q2, distanciaCargaQ3Q1, distanciaCargaQ2Q3, distanciaCarga1Q, distanciaCarga2Q, distanciaCarga3Q);
+        
+        
+        dispose();
+         
+        Resultados pagResultados = new Resultados();
+        pagResultados.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

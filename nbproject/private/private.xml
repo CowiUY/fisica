@@ -3,14 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
+
             <file>file:/C:/Users/Administrador/Desktop/Escritorio/FISICAPROGRAMACION/fisica/src/grafico/Resultados.java</file>
             <file>file:/C:/Users/Administrador/Desktop/Escritorio/FISICAPROGRAMACION/fisica/src/grafico/cargaEjerce.java</file>
             <file>file:/C:/Users/Administrador/Desktop/Escritorio/FISICAPROGRAMACION/fisica/src/grafico/SelecCargas.java</file>
             <file>file:/C:/Users/Administrador/Desktop/Escritorio/FISICAPROGRAMACION/fisica/src/grafico/mainScreen.java</file>
             <file>file:/C:/Users/Administrador/Desktop/Escritorio/FISICAPROGRAMACION/fisica/src/grafico/cargaEjerce2Select.java</file>
             <file>file:/C:/Users/Administrador/Desktop/Escritorio/FISICAPROGRAMACION/fisica/src/grafico/cargaEjerce3Select.java</file>
-=======
             <file>file:/C:/Users/Gabriel/Documents/Github/fisica/src/grafico/mainScreen.java</file>
             <file>file:/C:/Users/Gabriel/Documents/Github/fisica/src/grafico/cargaEjerce.java</file>
             <file>file:/C:/Users/Gabriel/Documents/Github/fisica/src/logica/campoElectrico.java</file>
@@ -20,7 +19,7 @@
             <file>file:/C:/Users/Gabriel/Documents/Github/fisica/src/logica/unidades.java</file>
             <file>file:/C:/Users/Gabriel/Documents/Github/fisica/src/grafico/cargaEjerce2Select.java</file>
             <file>file:/C:/Users/Gabriel/Documents/Github/fisica/src/grafico/cargaEjerce3Select.java</file>
->>>>>>> a114c95d78a98d00c020bfd4111ec44175a5ace2
+
         </group>
     </open-files>
 </project-private>

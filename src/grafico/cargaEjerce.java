@@ -12,6 +12,7 @@ import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
+import logica.unidades;
 
 
 /**
@@ -73,7 +74,6 @@ FondoPanel fondo = new FondoPanel();
         jLabel5.setForeground(new java.awt.Color(255, 255, 0));
         jLabel5.setText("Distancia entre la carga y el punto:");
 
-        jTextField6.setEditable(false);
         jTextField6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField6ActionPerformed(evt);
@@ -154,6 +154,9 @@ FondoPanel fondo = new FondoPanel();
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        
+        //unidades pedro = new unidades();
+        
        
     }//GEN-LAST:event_jButton1ActionPerformed
 
