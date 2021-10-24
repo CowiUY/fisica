@@ -40,6 +40,7 @@ public class SelecCargas extends javax.swing.JFrame {
         jToggleButton1 = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 0));
@@ -164,7 +165,7 @@ class FondoPanel extends JPanel
     private Image imagen;
     @Override
     public void paint(Graphics g){
-        imagen = new ImageIcon(getClass().getResource("/imagen/maxresdefault.jpg")).getImage();
+        imagen = new ImageIcon(getClass().getResource("/imagen/img21-scaled.jpg")).getImage();
        g.drawImage(imagen, 0, 0, getWidth(), getHeight(), this);
        setOpaque(false);
        
