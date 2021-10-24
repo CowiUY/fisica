@@ -22,16 +22,18 @@ public class campoElectrico{
         this.datos = datos;
     }
     
-    
+    public double CampoElectrico1Carga(){
+        double campoElecCarga1 = ((datos.K*datos.Q1)/datos.DistanciaPtoQ1);
+        return campoElecCarga1;
+    }
     
     public double CampoElectrico2Cargas(){
-            final double K = 9 * (10^9);
+
             
-            
-            double campoElecCarga1 = ((K*datos.Q1)/datos.DistanciaPtoQ1);
+            double campoElecCarga1 = ((datos.K*datos.Q1)/datos.DistanciaPtoQ1);
     
             
-            double campoElecCarga2 = ((K*datos.Q2)/datos.DistanciaPtoQ2);
+            double campoElecCarga2 = ((datos.K*datos.Q2)/datos.DistanciaPtoQ2);
             
             
             double puta = suma2vectores(campoElecCarga1, campoElecCarga2);
