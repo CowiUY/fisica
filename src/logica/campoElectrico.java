@@ -34,19 +34,22 @@ public class campoElectrico{
             double campoElecCarga2 = ((K*datos.Q2)/datos.DistanciaPtoQ2);
             
             
-            double puta = suma2vectores();
+            double puta = suma2vectores(campoElecCarga1, campoElecCarga2);
             
         return puta;
     }
     
  
-    public double suma2vectores(){
-        System.out.println("MORA SE LA COMEEEE");
-        System.out.println("a su novia");
-        
-        //MORA ACÁ TENÉS QUE SUMAR 2 VECTORES :)
-        
-        return 0.4153135418646;
+    public double suma2vectores(double Vector1, double Vector2){
+        double Angulo = calculos.TeoremaCosenoAngulos(datos.DistanciaQ1Q2, datos.DistanciaPtoQ1, datos.DistanciaPtoQ2);
+        double Suma;
+        if ((Vector1 < 0 && Vector2 < 0) || (Vector1 > 0 && Vector2 > 0)){
+            Suma = calculos.TeoremaCoseno(Vector1, Vector2, Angulo);
+        }else{
+            Angulo = (360 - (Angulo * 2)) / 2;
+            Suma = calculos.TeoremaCoseno(Vector2, Vector2, Angulo);   
+        }
+        return Suma;
     }
     
     
