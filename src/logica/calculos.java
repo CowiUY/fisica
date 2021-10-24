@@ -10,41 +10,18 @@ public class calculos {
     //String queda el . de double
     // Decimales a CS
     //public double pasarCS(int number){
+    
+    
+    
       
     //}
     
+    
+    
+    
+            
+            
     //Metodo que devuelve el angulo opuesto al Lado 1
-    
-    public double CampoElectrico2Cargas(double carga1, double distancia1, double carga2, double distancia2){
-        
-            
-            final double K = 9 * (10^9);
-            
-            double campoElecCarga1 = ((K*carga1)/distancia1);
-    
-            
-            double campoElecCarga2 = ((K*carga2)/distancia2);
-            
-            Boolean carga1Mayor;
-            
-            if (campoElecCarga1 > campoElecCarga2){
-                carga1Mayor = true;
-            }else{
-                carga1Mayor = false;
-            }
-            
-            double resultante;
-            
-            if (carga1Mayor){
-                resultante = campoElecCarga1 - campoElecCarga2;
-            }else{
-                resultante = campoElecCarga2 - campoElecCarga1;
-            }
-            
-        return 0.5;
-    }
-            
-            
     public double TeoremaCosenoAngulos(double Lado1, double Lado2, double Lado3){
         double Angulo;
         
