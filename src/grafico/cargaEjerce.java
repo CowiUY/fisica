@@ -168,6 +168,10 @@ FondoPanel fondo = new FondoPanel();
         unidades Pedro = new unidades(carga1, distanciaCarga);
         
         Pedro.setQ1(carga1);
+                
+                Resultados results = new Resultados();
+                
+                results.setQ1(carga1);
         
         dispose();
          

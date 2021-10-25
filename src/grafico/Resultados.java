@@ -18,11 +18,100 @@ import logica.unidades;
  */
 public class Resultados extends javax.swing.JFrame {
     FondoPanel fondo = new FondoPanel();
+     int Q1;
+        int Q2;
+        int Q3;
+    
+        double DistanciaQ1Q2;
+        double DistanciaQ1Q3;
+
+    public int getQ1() {
+        return Q1;
+    }
+
+    public void setQ1(int Q1) {
+        this.Q1 = Q1;
+    }
+
+    public int getQ2() {
+        return Q2;
+    }
+
+    public void setQ2(int Q2) {
+        this.Q2 = Q2;
+    }
+
+    public int getQ3() {
+        return Q3;
+    }
+
+    public void setQ3(int Q3) {
+        this.Q3 = Q3;
+    }
+
+    public double getDistanciaQ1Q2() {
+        return DistanciaQ1Q2;
+    }
+
+    public void setDistanciaQ1Q2(double DistanciaQ1Q2) {
+        this.DistanciaQ1Q2 = DistanciaQ1Q2;
+    }
+
+    public double getDistanciaQ1Q3() {
+        return DistanciaQ1Q3;
+    }
+
+    public void setDistanciaQ1Q3(double DistanciaQ1Q3) {
+        this.DistanciaQ1Q3 = DistanciaQ1Q3;
+    }
+
+    public double getDistanciaQ2Q3() {
+        return DistanciaQ2Q3;
+    }
+
+    public void setDistanciaQ2Q3(double DistanciaQ2Q3) {
+        this.DistanciaQ2Q3 = DistanciaQ2Q3;
+    }
+
+    public double getDistanciaPtoQ1() {
+        return DistanciaPtoQ1;
+    }
+
+    public void setDistanciaPtoQ1(double DistanciaPtoQ1) {
+        this.DistanciaPtoQ1 = DistanciaPtoQ1;
+    }
+
+    public double getDistanciaPtoQ2() {
+        return DistanciaPtoQ2;
+    }
+
+    public void setDistanciaPtoQ2(double DistanciaPtoQ2) {
+        this.DistanciaPtoQ2 = DistanciaPtoQ2;
+    }
+
+    public double getDistanciaPtoQ3() {
+        return DistanciaPtoQ3;
+    }
+
+    public void setDistanciaPtoQ3(double DistanciaPtoQ3) {
+        this.DistanciaPtoQ3 = DistanciaPtoQ3;
+    }
+        double DistanciaQ2Q3;
+    
+        double DistanciaPtoQ1;
+        double DistanciaPtoQ2;
+        double DistanciaPtoQ3;
+        
 
     /**
      * Creates new form Resultados
      */
     public Resultados() {
+        
+        
+    
+        
+        
          this.setContentPane(fondo);
         initComponents();
         fuerzaElectxt.setText("Fuerza Electrica va aqui (que datazo)");
@@ -33,13 +122,18 @@ public class Resultados extends javax.swing.JFrame {
         //cargaEjerce.Pedro;
         
         
+        
+        
+        
         //CalculoPotencialElectrico pepito = new CalculoPotencialElectrico();
         //double potencial = pepito.PotencialElectrico1Cargas(pedro.Q1, NORMAL);
         
-        String carga1 = String.valueOf(pedro.getQ1());
+        String carga1 = String.valueOf(Q1);
+        System.out.println(Q1);
         
         trabajotxt.setText(carga1);
         
+       
         
         
     }
