@@ -9,6 +9,8 @@ import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
+import logica.CalculoPotencialElectrico;
+import logica.unidades;
 
 /**
  *
@@ -26,6 +28,20 @@ public class Resultados extends javax.swing.JFrame {
         fuerzaElectxt.setText("Fuerza Electrica va aqui (que datazo)");
         campoElectxt.setText("Campo Eléctrico va aqui (que datazo)");
         trabajotxt.setText("Acá va lo que al Iván no le gusta :)");
+        
+        unidades pedro = new unidades();
+        //cargaEjerce.Pedro;
+        
+        
+        //CalculoPotencialElectrico pepito = new CalculoPotencialElectrico();
+        //double potencial = pepito.PotencialElectrico1Cargas(pedro.Q1, NORMAL);
+        
+        String carga1 = String.valueOf(pedro.getQ1());
+        
+        trabajotxt.setText(carga1);
+        
+        
+        
     }
 
     /**

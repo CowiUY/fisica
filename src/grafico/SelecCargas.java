@@ -102,7 +102,7 @@ public class SelecCargas extends javax.swing.JFrame {
         
         String itemSeleccionado = (String)jComboBox1.getSelectedItem();
  
-        if (itemSeleccionado == "1"){
+        if (itemSeleccionado.equals("1")){
             System.out.println("FUNCIONAAAA\n1");
             cargaEjerce pagCargaEjerce1 = new cargaEjerce();
             dispose();

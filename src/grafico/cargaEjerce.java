@@ -58,7 +58,7 @@ FondoPanel fondo = new FondoPanel();
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 0));
-        jLabel1.setText("Datos sobre la/s carga que ejerce/n");
+        jLabel1.setText("Datos sobre la carga");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 0));
@@ -117,8 +117,10 @@ FondoPanel fondo = new FondoPanel();
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 910, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(240, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(227, 227, 227)
+                        .addComponent(jLabel1)))
+                .addContainerGap(413, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -157,6 +159,20 @@ FondoPanel fondo = new FondoPanel();
         
         //unidades pedro = new unidades();
         
+        int carga1 = Integer.parseInt(jTextField1.getText());
+        
+        
+        double distanciaCarga = Double.parseDouble(jTextField6.getText());
+        
+        
+        unidades Pedro = new unidades(carga1, distanciaCarga);
+        
+        Pedro.setQ1(carga1);
+        
+        dispose();
+         
+        Resultados pagResultados = new Resultados();
+        pagResultados.setVisible(true);
        
     }//GEN-LAST:event_jButton1ActionPerformed
 

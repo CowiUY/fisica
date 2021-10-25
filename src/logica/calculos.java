@@ -22,7 +22,7 @@ public class calculos {
             
             
     //Metodo que devuelve el angulo opuesto al Lado 1
-    public double TeoremaCosenoAngulos(double Lado1, double Lado2, double Lado3){
+    static public double TeoremaCosenoAngulos(double Lado1, double Lado2, double Lado3){
         double Angulo;
         
         Angulo = -1 * (((Lado1 * Lado1) - (Lado2 * Lado2) - (Lado3 * Lado3)) / (2 * Lado2 * Lado3));
@@ -33,7 +33,7 @@ public class calculos {
     
 
     //Metodo que devuelve el lado opuesto al Angulo
-    public double TeoremaCosenoUnLado(double Lado1, double Lado2, double Angulo){
+    static public double TeoremaCoseno(double Lado1, double Lado2, double Angulo){
         double AnguloRadios = Math.toRadians(Angulo);
         double Lado3 = (Lado1 * Lado1) + (Lado2 * Lado2) - 2 * Lado1 * Lado2 * Math.cos(AnguloRadios);
         Lado3 = Math.sqrt(Lado3);

@@ -4,7 +4,7 @@ public class CalculoPotencialElectrico{
     
     unidades datos;
     
-    double PotencialElectrico1Cargas(double Distancia1, double Carga1){
+    public double PotencialElectrico1Cargas(double Distancia1, double Carga1){
         double PotencialElectrico;
         
         PotencialElectrico = ((datos.K * datos.Q1) / datos.DistanciaPtoQ1);
