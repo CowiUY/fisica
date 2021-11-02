@@ -1,7 +1,7 @@
 package logica;
 
 public class unidades {
-    final double K = 9 * (10^9);
+    final double K = 9 * (Math.pow(10, 9));
 
     public double Q1;
     public double Q2;

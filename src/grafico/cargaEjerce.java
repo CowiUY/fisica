@@ -153,7 +153,7 @@ FondoPanel fondo = new FondoPanel();
     }//GEN-LAST:event_InputDistanciaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        //unidades pedro = new unidades();
+
         
         double carga1 = Double.parseDouble(InputCarga.getText());        
         double distanciaCarga = Double.parseDouble(InputDistancia.getText());
@@ -169,9 +169,7 @@ FondoPanel fondo = new FondoPanel();
         PotencialElectrico PotencialElectrico = new PotencialElectrico(Datos);
         double ResultadoPotencialElectrico = PotencialElectrico.PotencialElectrico1Carga();
         
-        //Se pasan los datos recien obtenidos a Resultados
-        IntermedioResultado.setCampoElectrico(String.valueOf(ResultadoCampoElec));
-        IntermedioResultado.setPotencialElectrico(String.valueOf(ResultadoPotencialElectrico));
+        System.out.println(IntermedioResultado.getCampoElectrico());
         
         Datos.setQ1(carga1);
                 
@@ -179,11 +177,16 @@ FondoPanel fondo = new FondoPanel();
                 
                 results.setQ1(1);
         
-        dispose();
+        
          
         Resultados pagResultados = new Resultados();
         pagResultados.setVisible(true);
        
+        //Pasa los datos al siguiente JFrame
+        pagResultados.campoElectxt.setText(String.valueOf(ResultadoCampoElec));
+        pagResultados.Potencialtxt.setText(String.valueOf(ResultadoPotencialElectrico));
+        
+        dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
