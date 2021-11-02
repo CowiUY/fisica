@@ -40,6 +40,7 @@ public class SelecCargas extends javax.swing.JFrame {
         jToggleButton1 = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1000, 700));
         setResizable(false);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
@@ -48,7 +49,7 @@ public class SelecCargas extends javax.swing.JFrame {
 
         jComboBox1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jComboBox1.setForeground(new java.awt.Color(255, 255, 0));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -114,9 +115,8 @@ public class SelecCargas extends javax.swing.JFrame {
             pagCargaEjerce2.setVisible(true);
         }else if (itemSeleccionado == "3"){
             System.out.println("FUNCIONAAAA\n3");
-            cargaEjerce3Select pagCargaEjerce3 = new cargaEjerce3Select();
-            dispose();
-            pagCargaEjerce3.setVisible(true);
+            
+            
         }
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
