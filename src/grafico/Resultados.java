@@ -9,7 +9,7 @@ import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
-import logica.CalculoPotencialElectrico;
+import logica.PotencialElectrico;
 import logica.unidades;
 
 /**
@@ -114,9 +114,14 @@ public class Resultados extends javax.swing.JFrame {
         
          this.setContentPane(fondo);
         initComponents();
-        fuerzaElectxt.setText("Fuerza Electrica va aqui (que datazo)");
+        
+        IntermedioResultado.setCampoElectricoSigno(true);
+        
+        fuerzaElectxt.setText(IntermedioResultado.getFuerzaElectrica());
         campoElectxt.setText("Campo Eléctrico va aqui (que datazo)");
         trabajotxt.setText("Acá va lo que al Iván no le gusta :)");
+        
+        ImagenVector.setIcon(new ImageIcon("/imagen/Vectores/1CargaPositiva"));
         
         unidades pedro = new unidades();
         //cargaEjerce.Pedro;
@@ -154,6 +159,7 @@ public class Resultados extends javax.swing.JFrame {
         campoElectxt = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         trabajotxt = new javax.swing.JTextField();
+        ImagenVector = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(0, 0));
@@ -165,7 +171,7 @@ public class Resultados extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 51, 51));
-        jLabel2.setText("Fuerza eléctrica ejercida:");
+        jLabel2.setText("Fuerza eléctrica:");
 
         fuerzaElectxt.setEditable(false);
         fuerzaElectxt.addActionListener(new java.awt.event.ActionListener() {
@@ -176,7 +182,7 @@ public class Resultados extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 51, 51));
-        jLabel4.setText("Campo eléctrico ejercido:");
+        jLabel4.setText("Campo eléctrico:");
 
         campoElectxt.setEditable(false);
 
@@ -185,6 +191,8 @@ public class Resultados extends javax.swing.JFrame {
         jLabel5.setText("Potencial Eléctrico:");
 
         trabajotxt.setEditable(false);
+
+        ImagenVector.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/Vectores/1CargaNegativa.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -195,17 +203,23 @@ public class Resultados extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(240, 240, 240))
             .addGroup(layout.createSequentialGroup()
-                .addGap(178, 178, 178)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5))
-                .addGap(62, 62, 62)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(trabajotxt, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(campoElectxt, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(fuerzaElectxt, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(112, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(178, 178, 178)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5))
+                        .addGap(54, 54, 54)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(trabajotxt, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(campoElectxt, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(fuerzaElectxt, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(243, 243, 243)
+                        .addComponent(ImagenVector, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(195, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -216,15 +230,17 @@ public class Resultados extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(fuerzaElectxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                .addGap(42, 42, 42)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(campoElectxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(trabajotxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(199, Short.MAX_VALUE))
+                .addGap(100, 100, 100)
+                .addComponent(ImagenVector, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(130, Short.MAX_VALUE))
         );
 
         pack();
@@ -271,8 +287,9 @@ public class Resultados extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JLabel ImagenVector;
     private javax.swing.JTextField campoElectxt;
-    private javax.swing.JTextField fuerzaElectxt;
+    public static javax.swing.JTextField fuerzaElectxt;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
@@ -283,13 +300,6 @@ public class Resultados extends javax.swing.JFrame {
 class FondoPanel extends JPanel
 {
     private Image imagen;
-    @Override
-    public void paint(Graphics g){
-        imagen = new ImageIcon(getClass().getResource("/imagen/img21-scaled.jpg")).getImage();
-       g.drawImage(imagen, 0, 0, getWidth(), getHeight(), this);
-       setOpaque(false);
-       
-       super.paint(g);
-    }
+    
             
 }

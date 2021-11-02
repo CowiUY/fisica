@@ -13,12 +13,10 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import logica.unidades;
+import logica.campoElectrico;
+import logica.PotencialElectrico;
 
 
-/**
- *
- * @author Gabriel
- */
 public class cargaEjerce extends javax.swing.JFrame {
 FondoPanel fondo = new FondoPanel();
     calculos c = new calculos();
@@ -44,9 +42,9 @@ FondoPanel fondo = new FondoPanel();
         javax.swing.ButtonGroup btngroup = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        InputCarga = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        InputDistancia = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
@@ -64,9 +62,9 @@ FondoPanel fondo = new FondoPanel();
         jLabel2.setForeground(new java.awt.Color(255, 255, 0));
         jLabel2.setText("Carga 1:");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        InputCarga.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                InputCargaActionPerformed(evt);
             }
         });
 
@@ -74,9 +72,9 @@ FondoPanel fondo = new FondoPanel();
         jLabel5.setForeground(new java.awt.Color(255, 255, 0));
         jLabel5.setText("Distancia entre la carga y el punto:");
 
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+        InputDistancia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
+                InputDistanciaActionPerformed(evt);
             }
         });
 
@@ -108,13 +106,13 @@ FondoPanel fondo = new FondoPanel();
                             .addComponent(jLabel5)
                             .addComponent(jButton1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(InputDistancia, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(InputCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
@@ -130,12 +128,12 @@ FondoPanel fondo = new FondoPanel();
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(InputCarga, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(InputDistancia, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(36, 36, 36)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -145,33 +143,41 @@ FondoPanel fondo = new FondoPanel();
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void InputCargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InputCargaActionPerformed
         // TODO add your handlingjLabel1.SetForeground(Color.GREEN); code here:
         
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_InputCargaActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+    private void InputDistanciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InputDistanciaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    }//GEN-LAST:event_InputDistanciaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        
         //unidades pedro = new unidades();
         
-        int carga1 = Integer.parseInt(jTextField1.getText());
+        double carga1 = Double.parseDouble(InputCarga.getText());        
+        double distanciaCarga = Double.parseDouble(InputDistancia.getText());
+
+        //Se guardan todos los datos del formulario en Datos
+        unidades Datos = new unidades(carga1, distanciaCarga);
         
+        //Calcula y pasa los datos a resultados Campo electrico
+        campoElectrico CampoElectrico = new campoElectrico(Datos);
+        double ResultadoCampoElec = CampoElectrico.CampoElectrico1Carga(); 
+  
+        //Calcula y pasa los datos a resultados Campo electrico
+        PotencialElectrico PotencialElectrico = new PotencialElectrico(Datos);
+        double ResultadoPotencialElectrico = PotencialElectrico.PotencialElectrico1Carga();
         
-        double distanciaCarga = Double.parseDouble(jTextField6.getText());
+        //Se pasan los datos recien obtenidos a Resultados
+        IntermedioResultado.setCampoElectrico(String.valueOf(ResultadoCampoElec));
+        IntermedioResultado.setPotencialElectrico(String.valueOf(ResultadoPotencialElectrico));
         
-        
-        unidades Pedro = new unidades(carga1, distanciaCarga);
-        
-        Pedro.setQ1(carga1);
+        Datos.setQ1(carga1);
                 
                 Resultados results = new Resultados();
                 
-                results.setQ1(carga1);
+                results.setQ1(1);
         
         dispose();
          
@@ -220,14 +226,14 @@ FondoPanel fondo = new FondoPanel();
     
    
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField InputCarga;
+    private javax.swing.JTextField InputDistancia;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField6;
     // End of variables declaration//GEN-END:variables
 class FondoPanel extends JPanel
 {
