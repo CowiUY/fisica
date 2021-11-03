@@ -254,6 +254,74 @@ public class cargaEjerce2Select extends javax.swing.JFrame {
         //Guardo los datos
         unidades Datos = new unidades(carga1, distanciaCarga);
         
+        calculos pedrito = new calculos(carga1);
+        
+        int tieneE = pedrito.Everdad(carga1);
+        
+        //String etrin = ""+carga1;
+        
+        int vueltas = 0;
+        
+        Boolean antesdeiralbailecomopizzamuzzarella = true;
+        
+        if (tieneE == 0){
+            
+            System.out.println("NO TIENE E");
+            //CODIGO EN PROCESO
+            if (carga1 > 1){
+                String etrin = ""+carga1;
+                System.out.println(etrin);
+                for (int i = etrin.length() -1; i >= 0; i--){
+                    System.out.println("I es "+i);
+                    System.out.println(etrin.charAt(i));
+                    
+                    if (etrin.charAt(i) == '0'){// && antesdeiralbailecomopizzamuzzarella == false){
+                        System.out.println("I es 0; I es "+etrin.charAt(i));
+                        vueltas++;
+                        System.out.println("vueltas++ "+vueltas);
+                    }else{
+                        System.out.println("antesdeiralbailecomopizzamuzzarella false");
+                        antesdeiralbailecomopizzamuzzarella = true;
+                    }
+                    //TERMINA CODIGO EN PROCESO
+                }
+                System.out.println("antesdeiralbailecomopizzamuzzarella "+antesdeiralbailecomopizzamuzzarella);
+                System.out.println("");
+                System.out.println("vueltas= "+vueltas);
+            }else{
+                System.out.println("No tiene E");
+            int exponente = pedrito.RobertoGomez(carga1);
+            System.out.println("exponente = " +exponente);
+                double down = carga1;
+                for(int d = 0; d < exponente; d++){
+                    down = down *10;
+                    System.out.println("");
+                    System.out.println(down);
+                }
+                System.out.println("abajo = "+down);
+                System.out.println("El número sería "+down + " exponente "+exponente);
+            }
+            
+        }else{
+            //francisco guarda el numerito de abajo
+            String etrin = ""+carga1;
+            String francisco="";
+            for (int z = 0; z < carga2; z++){
+                francisco += etrin.charAt(z);
+            }
+            System.out.println("fran = "+francisco);
+            
+            String abajation = "";
+            
+            for (int z = tieneE+1; z < etrin.length(); z++){
+                abajation += etrin.charAt(z);
+            }
+            System.out.println("abajation = "+abajation);
+        }
+        
+        
+        
+        
         //Inicializo un objeto tipo CampoElectrico
         campoElectrico CampoElectrico = new campoElectrico(Datos);
         

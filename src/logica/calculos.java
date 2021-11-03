@@ -15,9 +15,11 @@ public class calculos {
     
       
     //}
+    double intogor;
     
-    
-    
+    public calculos(double intogor){
+        this.intogor = intogor;
+    }
     
             
             
@@ -48,8 +50,13 @@ public class calculos {
         
         
         
-        //int bonjour = Everdad(intogor);
+        int bonjour = Everdad(intogor);
         
+        
+        
+
+    //LEER ==>    
+        //IVÁN ESTO HAY QUE IMPORTARLO AL CÓDIGO         
         
         
 
@@ -57,7 +64,10 @@ public class calculos {
         //IVÁN ESTO HAY QUE IMPORTARLO AL CÓDIGO 
     
         
-        /*if ( bonjour == 0){
+        
+    /*
+    
+        if ( bonjour == 0){
             System.out.println("NO TIENE E, VERIFICAR...");
             System.out.println(intogor);
             
@@ -95,11 +105,15 @@ public class calculos {
             
         
         
-        } */  
-        
+        }  
+      */  
         
     //HASTA ACÁ, GRACIAS AIBAN POR LA ATENCIÓN 
     //LEER HASTA ACÁ <==
+
+    public calculos() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
     
@@ -109,7 +123,7 @@ public class calculos {
     
     
     //Se fija si hay una E en el double
-         int Everdad(double number){ //static
+        public int Everdad(double number){ //static
     int denominador = 0;
     String lucio = ""+number;
     System.out.println("LUCIO LENGTH");
@@ -156,7 +170,7 @@ public class calculos {
 
     
     //Si el número es 0.algo...
-static int RobertoGomez(double number){
+public static int RobertoGomez(double number){
     String etrin = ""+number;
     int vueltas = 0;
     System.out.println();
