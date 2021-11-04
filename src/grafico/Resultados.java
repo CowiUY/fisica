@@ -140,10 +140,9 @@ public class Resultados extends javax.swing.JFrame {
         campoElectxt = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         Potencialtxt = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
+        VectorImg = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(700, 700));
         setResizable(false);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 76)); // NOI18N
@@ -161,8 +160,6 @@ public class Resultados extends javax.swing.JFrame {
         jLabel5.setText("Potencial Eléctrico:");
 
         Potencialtxt.setEditable(false);
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/Vectores/1CargaNegativa.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -183,9 +180,9 @@ public class Resultados extends javax.swing.JFrame {
                             .addComponent(Potencialtxt, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(campoElectxt, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(155, 155, 155)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 412, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(322, Short.MAX_VALUE))
+                        .addGap(175, 175, 175)
+                        .addComponent(VectorImg, javax.swing.GroupLayout.PREFERRED_SIZE, 553, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(228, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -200,9 +197,9 @@ public class Resultados extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(Potencialtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(96, 96, 96)
-                .addComponent(jLabel2)
-                .addContainerGap(236, Short.MAX_VALUE))
+                .addGap(155, 155, 155)
+                .addComponent(VectorImg, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(175, Short.MAX_VALUE))
         );
 
         pack();
@@ -245,9 +242,9 @@ public class Resultados extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JTextField Potencialtxt;
+    public javax.swing.JLabel VectorImg;
     public javax.swing.JTextField campoElectxt;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     // End of variables declaration//GEN-END:variables

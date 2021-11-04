@@ -5,6 +5,7 @@
  */
 package grafico;
 
+import static grafico.IntermedioResultado.ImagenVector;
 import java.awt.Color;
 import javax.swing.JOptionPane;
 import logica.calculos;
@@ -19,7 +20,7 @@ import logica.PotencialElectrico;
 
 public class cargaEjerce extends javax.swing.JFrame {
 FondoPanel fondo = new FondoPanel();
-    calculos c = new calculos();
+
     
     /**
      * Creates new form cargaEjerce
@@ -158,34 +159,39 @@ FondoPanel fondo = new FondoPanel();
         
         double carga1 = Double.parseDouble(InputCarga.getText());        
         double distanciaCarga = Double.parseDouble(InputDistancia.getText());
-
+        
         //Se guardan todos los datos del formulario en Datos
         unidades Datos = new unidades(carga1, distanciaCarga);
         
         //Calcula y pasa los datos a resultados Campo electrico
         campoElectrico CampoElectrico = new campoElectrico(Datos);
         double ResultadoCampoElec = CampoElectrico.CampoElectrico1Carga(); 
-  
+        
+        //Se ve el signo para el vector y asigna la imagen correspondiente
+        boolean SignoCarga = carga1 > 0;
+        
+        String ImagenVector = "/Vectores/";
+        if (SignoCarga){
+            ImagenVector = ImagenVector + "1CargaPositiva.png";
+        }else{
+            ImagenVector = ImagenVector + "1CargaNegativa.png";
+        }
+        
+        
         //Calcula y pasa los datos a resultados Campo electrico
         PotencialElectrico PotencialElectrico = new PotencialElectrico(Datos);
         double ResultadoPotencialElectrico = PotencialElectrico.PotencialElectrico1Carga();
-        
-        System.out.println(IntermedioResultado.getCampoElectrico());
-        
-        Datos.setQ1(carga1);
                 
-                Resultados results = new Resultados();
-                
-                results.setQ1(1);
-        
-        
-         
+        //Abre el siguiente Jframe 
         Resultados pagResultados = new Resultados();
         pagResultados.setVisible(true);
        
         //Pasa los datos al siguiente JFrame
         pagResultados.campoElectxt.setText(String.valueOf(ResultadoCampoElec));
         pagResultados.Potencialtxt.setText(String.valueOf(ResultadoPotencialElectrico));
+        
+        Image Vector = new ImageIcon(getClass().getResource(ImagenVector)).getImage();
+        pagResultados.VectorImg.setIcon(new ImageIcon(Vector));
         
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
