@@ -17,8 +17,8 @@ public class calculos {
     //}
     double intogor;
     
-    public calculos(double intogor){
-        this.intogor = intogor;
+    public calculos(){
+        
     }
     
             
@@ -111,9 +111,7 @@ public class calculos {
     //HASTA ACÁ, GRACIAS AIBAN POR LA ATENCIÓN 
     //LEER HASTA ACÁ <==
 
-    public calculos() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
     
     
     
@@ -167,11 +165,40 @@ public class calculos {
     }
     
     }
+        
+        public int tiene0(double number){
+            int vueltas = 0;
+            String etrin = ""+number;
+            
+            //EN PROCESO
+            Boolean antesdeiralbailecomopizzamuzzarella = false;
+            //TERMINA EN PROCESO
+            for (int i = etrin.length() -1; i >= 0; i--){ //AGREGAR BOOLEAN
+                    System.out.println("I es "+i);
+                    System.out.println(etrin.charAt(i));
+                    
+                    if (etrin.charAt(i) == '0'){// && antesdeiralbailecomopizzamuzzarella == false){
+                        System.out.println("I es 0; I es "+etrin.charAt(i));
+                        vueltas++;
+                        System.out.println("vueltas++ "+vueltas);
+                    }else{
+                        System.out.println("antesdeiralbailecomopizzamuzzarella false");
+                        antesdeiralbailecomopizzamuzzarella = true;
+                    }
+                    
+        }
+            
+            System.out.println("antesdeiralbailecomopizzamuzzarella "+antesdeiralbailecomopizzamuzzarella);
+                System.out.println("");
+                System.out.println("vueltas= "+vueltas);
+            return vueltas;
+        }
+        
 
     
     //Si el número es 0.algo...
 public static int RobertoGomez(double number){
-    String etrin = ""+number;
+    String etrin = String.valueOf(number);
     int vueltas = 0;
     System.out.println();
     System.out.println(etrin.charAt(0));
@@ -182,7 +209,9 @@ public static int RobertoGomez(double number){
         
         vueltas++;
         number = number * 10;
-        etrin = ""+BigDecimal.valueOf(number);
+        //etrin = ""+BigDecimal.valueOf(number);
+        etrin = String.valueOf(number);
+        
         System.out.println("etrin = "+etrin);
         System.out.println("Char at 0 "+etrin.charAt(0));
         //System.out.println(number);
@@ -219,9 +248,23 @@ public static int RobertoGomez(double number){
         
 }
 
+    public int sacar0(double number){
+        String etrin = String.valueOf(number);
+        int vueltas = 0;
+        
+        for (int i = 0; i < etrin.length(); i++){
+            if (etrin.charAt(i) != '.'){
+                vueltas++;
+                System.out.println("No hay coma, caracter: "+etrin.charAt(i));
+        }else{
+                System.out.println("Hay coma, caracter: "+etrin.charAt(i));
+            }
+        }
+        
+        return 5;
+    }
 
 
 }
-
 
 

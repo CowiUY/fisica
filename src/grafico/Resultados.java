@@ -143,6 +143,7 @@ public class Resultados extends javax.swing.JFrame {
         VectorImg = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(950, 739));
         setResizable(false);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 76)); // NOI18N
