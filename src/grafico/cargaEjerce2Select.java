@@ -330,6 +330,8 @@ public class cargaEjerce2Select extends javax.swing.JFrame {
         //Guardo los datos
         unidades Datos = new unidades(carga1, distanciaCarga);
         
+        double base;
+        double exponente = 0;
         
         
         for (int i = 1; i <=2; i++){
@@ -340,9 +342,13 @@ public class cargaEjerce2Select extends javax.swing.JFrame {
                 
                 tieneE = pedrito.Everdad(carga1);        
                 carga = carga1;
+                
+                base = carga1;
+                
             }else{
                 tieneE = pedrito.Everdad(carga2);
                 carga = carga2;
+                base = carga2;
             }
             
         if (tieneE == 0){
@@ -351,23 +357,25 @@ public class cargaEjerce2Select extends javax.swing.JFrame {
             //CODIGO EN PROCESO
             if (carga > 1){
                 System.out.println("MAYOR A UNO");
-                int vueltas = pedrito.tiene0(carga);
+                exponente = pedrito.tiene0(carga) - 1;
                     
                 
                 
             }else if (carga > 0 && carga < 1){
                 
                 //SI el número es 0. algo
-            int exponente = pedrito.RobertoGomez(carga);
-            System.out.println("exponente = " +exponente);
+            int exponenteadentro = pedrito.RobertoGomez(carga);
+            System.out.println("exponente = " +exponenteadentro);
                 double down = carga;
-                for(int d = 0; d < exponente; d++){
+                for(int d = 0; d < exponenteadentro; d++){
                     down = down *10;
                     System.out.println("");
                     System.out.println(down);
                 }
                 System.out.println("abajo = "+down);
-                System.out.println("El número sería "+down + " exponente "+exponente);
+                base = down;
+                System.out.println("El número sería "+down + " exponente "+exponenteadentro);
+                exponente = exponenteadentro;
                 
                 //PASAR EXPONENTE A NEGATIVO CON UN FORI VAR=EXPONENTE ANTES ; --
                 
