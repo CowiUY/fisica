@@ -24,12 +24,12 @@ public class campoElectrico{
             double campoElecCarga1 = ((datos.K*datos.Q1)/Math.pow(datos.DistanciaPtoQ1, 2));
     
             
-            double campoElecCarga2 = ((datos.K*datos.Q2)/datos.DistanciaPtoQ2);
+            double campoElecCarga2 = ((datos.K*datos.Q2)/Math.pow(datos.DistanciaPtoQ1, 2));
             
             
-            double puta = suma2vectores(campoElecCarga1, campoElecCarga2);
+            double suma = suma2vectores(campoElecCarga1, campoElecCarga2);
             
-        return puta;
+        return suma;
     }
     
  
@@ -37,10 +37,14 @@ public class campoElectrico{
         double Angulo = calculos.TeoremaCosenoAngulos(datos.DistanciaQ1Q2, datos.DistanciaPtoQ1, datos.DistanciaPtoQ2);
         double Suma;
         if ((Vector1 < 0 && Vector2 < 0) || (Vector1 > 0 && Vector2 > 0)){
+            Vector1 = Math.abs(Vector1);
+            Vector2 = Math.abs(Vector2);
             Suma = calculos.TeoremaCoseno(Vector1, Vector2, Angulo);
         }else{
             Angulo = (360 - (Angulo * 2)) / 2;
-            Suma = calculos.TeoremaCoseno(Vector2, Vector2, Angulo);   
+            Vector1 = Math.abs(Vector1);
+            Vector2 = Math.abs(Vector2);
+            Suma = calculos.TeoremaCoseno(Vector1, Vector2, Angulo);   
         }
         return Suma;
     }

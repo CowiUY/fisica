@@ -10,15 +10,15 @@ public class PotencialElectrico{
     
     public double PotencialElectrico1Carga(){
         double PotencialElectrico;
-        PotencialElectrico = ((datos.K * datos.Q1) / Math.pow(datos.DistanciaPtoQ1, 2));
+        PotencialElectrico = ((datos.K * datos.Q1) / datos.DistanciaPtoQ1);
         
         return PotencialElectrico;
     }
     
     public double PotencialElectrico2Cargas(){
         double PotencialElectrico;
-        PotencialElectrico = ((datos.K * datos.Q1) / Math.pow(datos.DistanciaPtoQ1, 2)) + 
-                             ((datos.K * datos.Q2) / Math.pow(datos.DistanciaPtoQ1, 2));
+        PotencialElectrico = ((datos.K * datos.Q1) / datos.DistanciaPtoQ1 ) + 
+                             ((datos.K * datos.Q2) / datos.DistanciaPtoQ2);
         
         return PotencialElectrico;
     }
