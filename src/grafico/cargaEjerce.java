@@ -202,13 +202,23 @@ calculos pedrito = new calculos();
         int ExponenteCampoElec = 0;
         
         //Se ve el signo para el vector y asigna la imagen correspondiente
-        boolean SignoCarga = carga1 > 0;
+        int SignoCarga;
+        if (carga1 == 0){
+            SignoCarga = 0;
+        }else if(carga1 > 0){
+           SignoCarga = 1;
+        }else{
+            SignoCarga = -1;
+        }
+        
         
         String ImagenVector = "/Vectores/";
-        if (SignoCarga){
+        if (SignoCarga == 1){
             ImagenVector = ImagenVector + "1CargaPositiva.png";
-        }else{
+        }else if (SignoCarga == -1){
             ImagenVector = ImagenVector + "1CargaNegativa.png";
+        }else{
+            ImagenVector = ImagenVector + "1CargaNeutra.png";
         }
         
         
