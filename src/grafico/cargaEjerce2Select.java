@@ -335,6 +335,67 @@ public class cargaEjerce2Select extends javax.swing.JFrame {
         
         double base = 0;
         int exponente = 0;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         
         //Decide cuál va a ser el valor a tratar...
         for (int i = 1; i <=2; i++){
@@ -368,26 +429,37 @@ public class cargaEjerce2Select extends javax.swing.JFrame {
                     
                 
                 
-            }else if (carga > 0 && carga < 1){
+            }else if (carga > 0 && carga < 1){// carga >0 && carga <1
                 System.out.println("carga mayor a 0 menor a 1");
                 
                 //SI el número es 0. algo
             exponente = pedrito.RobertoGomez(carga);
             
-                
+            if (exponente > 0){    
+            
                 for(int d = 0; d < exponente; d++){
                     base = base *10;
                     System.out.println("");
                     System.out.println(base);
                 }
-                
+            }else{
+                for(int d = 0; d > exponente; d--){
+                    base = base *10;
+                    System.out.println("");
+                    System.out.println(base);
+                }
+            }
                 
                 
                 
                 
                 
             
-            }
+            }else if (carga <0){
+                        System.out.println("Menor a 0");
+                        exponente = pedrito.tiene0(carga);
+                base = pedrito.tiene0Base(carga);
+                        }
             
             
             
@@ -398,11 +470,15 @@ public class cargaEjerce2Select extends javax.swing.JFrame {
             
             exponente = (int) pedrito.hayExponente(carga, tieneE);
             base = pedrito.hayEBase(carga, tieneE);
+            System.out.println("");
+            System.out.println("Carga antes de entrar "+base);
+            System.out.println("");
             
             //exponente = pedrito.tiene0(temporal);
             
-            base = pedrito.cifras(base);
-            exponente += pedrito.cifrasExp(pedrito.hayEBase(carga, tieneE));
+            //base = pedrito.cifras(base);
+            base = pedrito.dosCS(base);
+            //exponente += pedrito.cifrasExp(pedrito.hayEBase(carga, tieneE));
         }
             
         
@@ -444,16 +520,16 @@ public class cargaEjerce2Select extends javax.swing.JFrame {
         
         
          
-    /*    Resultados pagResultados = new Resultados();
-    //    pagResultados.setVisible(true);
+       Resultados pagResultados = new Resultados();
+       pagResultados.setVisible(true);
        
         //Pasa los datos al siguiente JFrame
         pagResultados.campoElectxt.setText(String.valueOf(ResultadoCampoElec));
         pagResultados.Potencialtxt.setText(String.valueOf(ResultadoPotencialElectrico));
-        pagResultados.campoElectxt.setText("hola");
+        
         
         dispose();
-    */
+    
         
     }//GEN-LAST:event_jButton1ActionPerformed
 

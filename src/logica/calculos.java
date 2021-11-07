@@ -159,11 +159,13 @@ public class calculos {
             
             
             
-            int numerito = (int) Math.round(number);
+            //int numerito = (int) Math.round(number);
+            int numerito = (int) number;
             System.out.println("numerito = "+numerito);
             String etrin = String.valueOf(numerito);
             
-            while (etrin.length() != 2){
+            if (etrin.length() >= 3){
+                while (etrin.length() != 2){
                 System.out.println("etrin p = " +etrin);
                 numerito /= 10;
                 etrin = String.valueOf(numerito);
@@ -172,6 +174,38 @@ public class calculos {
                 System.out.println("");
                 vueltas++;
             }
+            }else
+            
+            
+                while (etrin.length() != 2){
+                System.out.println("etrin p = " +etrin);
+                numerito *= 10;
+                etrin = String.valueOf(numerito);
+                System.out.println("etrin a = "+etrin);
+                System.out.println("");
+                System.out.println("");
+                vueltas++;
+            }
+                
+            
+                    System.out.println("TIENE 0 MENOR A 0");
+                    
+                    while (etrin.length() != 2){
+                System.out.println("etrin p = " +etrin);
+                numerito /= 10;
+                etrin = String.valueOf(numerito);
+                System.out.println("etrin a = "+etrin);
+                System.out.println("");
+                System.out.println("");
+                vueltas++;
+                    }
+            
+            
+        
+            
+            
+            
+            
             
             
             return vueltas;
@@ -181,7 +215,7 @@ public class calculos {
         
         public int tiene0Base(double number){
             
-            int numerito = (int) Math.round(number);
+            int numerito = (int) number;
             String etrin = String.valueOf(numerito);
             while (etrin.length() != 2){
                 System.out.println("etrin p = " +etrin);
@@ -195,10 +229,32 @@ public class calculos {
                 return Integer.parseInt(etrin);
         }
         
+        public double dosCS(double number){
+            String volver;
+            String etrin = String.valueOf(number);
+            
+            boolean tienePunto = false;
+                System.out.println("DOS CS, numero es "+etrin);
+            if (etrin.charAt(1) == '.'){
+                
+                tienePunto = true;
+                System.out.println("Tiene punto "+etrin.charAt(1));
+            }
+            if (tienePunto){
+                System.out.println("tienePunto");
+                volver = etrin.substring(0, 3);
+            }else{
+                System.out.println("noTienePunto");
+                volver = etrin.substring(0, 2);
+            }
+            return Double.parseDouble(volver);
+        }
+        
         
         public int cifras(double number){
             String etrin = String.valueOf(number);
-            int numerito = (int) Math.round(number);
+            int numerito = (int) number;
+            System.out.println("numerito cifras "+numerito);
             while (etrin.length() != 2){
                 System.out.println("etrin p = " +etrin);
                 numerito *= 10;
@@ -235,6 +291,7 @@ public static int RobertoGomez(double number){
     int vueltas = 0;
     System.out.println();
     System.out.println(etrin.charAt(0));
+    System.out.println(etrin.charAt(1));
     System.out.println();
     
     System.out.println("number = "+number);
@@ -287,6 +344,7 @@ public static int RobertoGomez(double number){
                 francisco += etrin.charAt(z);
                 
             }
+            System.out.println("Exponente E "+francisco);
             
             
             return Double.parseDouble(francisco);
@@ -298,9 +356,18 @@ public static int RobertoGomez(double number){
     
     // CS a decimales
     public double Potencia(double unit,double  potencia){
-        for(double i = potencia; i >0; i--){
+        
+        if (potencia > 0){
+            for(double i = potencia; i >0; i--){
             unit = unit * 10;
         }
+        }else{
+            for(double i = 0; i >potencia; i--){
+            unit = unit / 10;
+        }
+        }
+        
+        
         return unit;
     
         
