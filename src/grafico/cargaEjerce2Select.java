@@ -347,11 +347,28 @@ public class cargaEjerce2Select extends javax.swing.JFrame {
         PotencialElectrico PotencialElectrico = new PotencialElectrico(Datos);
         double ResultadoPotencialElectrico = PotencialElectrico.PotencialElectrico2Cargas();
         int ExponentePotencialElectrico = 0;
-
-
-
-
-
+        
+        //Ve los signos de carga 1 y 2
+        int SignoCarga1;
+        if (carga1 == 0){
+            SignoCarga1 = 0;
+        }else if(carga1 > 0){
+           SignoCarga1 = 1;
+        }else{
+            SignoCarga1 = -1;
+        }
+        
+        int SignoCarga2;
+        if (carga1 == 0){
+            SignoCarga2 = 0;
+        }else if(carga1 > 0){
+           SignoCarga2 = 1;
+        }else{
+            SignoCarga2 = -1;
+        }
+        
+        //le asigna una imagen
+        String ImagenVector = "/Vectores/";
 
 
 

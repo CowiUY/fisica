@@ -23,6 +23,7 @@ public class unidades {
         this.Q1 = Q1;
     }
 
+    //constructor 2 cargas
     public unidades(double Q1, double Q2, double DistanciaQ1Q2, double DistanciaPtoQ1, double DistanciaPtoQ2) {
         this.Q1 = Q1;
         this.Q2 = Q2;

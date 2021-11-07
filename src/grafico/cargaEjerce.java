@@ -183,7 +183,7 @@ FondoPanel fondo = new FondoPanel();
     }//GEN-LAST:event_InputDistanciaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-calculos pedrito = new calculos();
+    calculos pedrito = new calculos();
 
         double carga1 = pedrito.Potencia(Double.parseDouble(InputCarga.getText().trim()), Double.parseDouble(potenciaCarga1.getText().trim()));
         
@@ -211,18 +211,21 @@ calculos pedrito = new calculos();
             SignoCarga = -1;
         }
         
-        
+        String ImagenCarga = "/Vectores/";
         String ImagenVector = "/Vectores/";
         if (SignoCarga == 1){
-            ImagenVector = ImagenVector + "1CargaPositiva.png";
+            ImagenCarga = "/Vectores/CargaPositiva.png";
+            ImagenVector = ImagenVector + "VectorCargaPositiva.png";
         }else if (SignoCarga == -1){
-            ImagenVector = ImagenVector + "1CargaNegativa.png";
+            ImagenCarga = "/Vectores/CargaNegativa.png";
+            ImagenVector = ImagenVector + "VectorCargaNegativa.png";
         }else{
-            ImagenVector = ImagenVector + "1CargaNeutra.png";
+            ImagenCarga = "/Vectores/CargaNeutra.png";
+            ImagenVector = ImagenVector + "VectorCargaNeutra.png";
         }
         
         
-        //Calcula y pasa los datos a resultados Campo electrico
+        //Calcula y pasa los datos a resultados potencial electrico
         PotencialElectrico PotencialElectrico = new PotencialElectrico(Datos);
         double ResultadoPotencialElectrico = PotencialElectrico.PotencialElectrico1Carga();
         int ExponentePotencialElectrico = 0;
@@ -340,8 +343,12 @@ calculos pedrito = new calculos();
         pagResultados.Potencialtxt.setText(String.valueOf(ResultadoPotencialElectrico));
         pagResultados.exponentePotencialElectrico.setText(String.valueOf(ExponentePotencialElectrico));
         
+        //asigna las imagenes
         Image Vector = new ImageIcon(getClass().getResource(ImagenVector)).getImage();
         pagResultados.VectorImg.setIcon(new ImageIcon(Vector));
+        
+        Image Carga = new ImageIcon(getClass().getResource(ImagenCarga)).getImage();
+        pagResultados.CargaImagen.setIcon(new ImageIcon(Carga));
         
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
