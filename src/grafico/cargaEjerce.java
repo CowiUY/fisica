@@ -194,12 +194,19 @@ FondoPanel fondo = new FondoPanel();
         unidades Datos = new unidades(carga1, distanciaCarga);
         
         
-        
+        //Calcula y pasa los datos a resultados potencial electrico
+        PotencialElectrico PotencialElectrico = new PotencialElectrico(Datos);
+        double ResultadoPotencialElectrico = PotencialElectrico.PotencialElectrico1Carga();
+        int ExponentePotencialElectrico = 0;
         
         //Calcula y pasa los datos a resultados Campo electrico
         campoElectrico CampoElectrico = new campoElectrico(Datos);
         double ResultadoCampoElec = CampoElectrico.CampoElectrico1Carga(); 
         int ExponenteCampoElec = 0;
+        
+        //Pasa los datos a valor absoluto
+        ResultadoPotencialElectrico = Math.abs(ResultadoPotencialElectrico);
+        ResultadoCampoElec = Math.abs(ResultadoCampoElec);
         
         //Se ve el signo para el vector y asigna la imagen correspondiente
         int SignoCarga;
@@ -225,15 +232,13 @@ FondoPanel fondo = new FondoPanel();
         }
         
         
-        //Calcula y pasa los datos a resultados potencial electrico
-        PotencialElectrico PotencialElectrico = new PotencialElectrico(Datos);
-        double ResultadoPotencialElectrico = PotencialElectrico.PotencialElectrico1Carga();
-        int ExponentePotencialElectrico = 0;
+        
         
         
         
         double base = 0;
         int exponente = 0;
+        
         
         
         

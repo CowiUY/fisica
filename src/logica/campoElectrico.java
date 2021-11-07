@@ -18,6 +18,11 @@ public class campoElectrico{
         return campoElecCarga1;
     }
     
+    public double CampoElectrico1CargaQ2(){
+        double campoElecCarga1 = ((datos.K*datos.Q2)/datos.DistanciaPtoQ2);
+        return campoElecCarga1;
+    }
+    
     public double CampoElectrico2Cargas(){
 
             

@@ -359,20 +359,100 @@ public class cargaEjerce2Select extends javax.swing.JFrame {
         }
         
         int SignoCarga2;
-        if (carga1 == 0){
+        if (carga2 == 0){
             SignoCarga2 = 0;
-        }else if(carga1 > 0){
+        }else if(carga2 > 0){
            SignoCarga2 = 1;
         }else{
             SignoCarga2 = -1;
         }
         
-        //le asigna una imagen
+        //le asigna una imagen de cargas
+        String ImagenCargas = "/Vectores/Carga";
+        
+        switch (SignoCarga1){
+            case 1: ImagenCargas = ImagenCargas + "Positiva";
+            break;
+            case 0: ImagenCargas = ImagenCargas + "Neutra";
+            break;
+            case -1: ImagenCargas = ImagenCargas + "Negativa";
+            break;
+        }
+        
+        switch (SignoCarga2){
+            case 1: ImagenCargas = ImagenCargas + "Positiva";
+            break;
+            case 0: ImagenCargas = ImagenCargas + "Neutra";
+            break;
+            case -1: ImagenCargas = ImagenCargas + "Negativa";
+            break;
+        }
+
+        //le asigna una imagen de vector
         String ImagenVector = "/Vectores/";
-
-
-
-
+        
+        int SignoCampoElec;
+        if (ResultadoCampoElec == 0){
+            SignoCampoElec = 0;
+        }else if (ResultadoCampoElec > 0){
+            SignoCampoElec = 1;
+        }else{
+            SignoCampoElec = -1;
+        }
+        
+        switch (SignoCampoElec){
+            case 1: ImagenVector = ImagenVector + "Derecha";
+            break;
+            case -1: ImagenVector = ImagenVector + "Izquierda";
+            break;
+            case 0: ImagenVector = ImagenVector + "Neutro";
+        }
+        
+        double CampoElectrico1 = CampoElectrico.CampoElectrico1Carga();
+        double CampoElectrico2 = CampoElectrico.CampoElectrico1CargaQ2();
+        
+        switch(SignoCampoElec){
+            case -1:
+                if (SignoCarga1 != SignoCarga2){
+                
+                if (SignoCarga1 < SignoCarga2){
+                    ImagenVector = ImagenVector + "Arriba";
+                }else{
+                    ImagenVector = ImagenVector + "Abajo";
+                }
+            }else{
+                if (CampoElectrico1 == CampoElectrico2){
+                    ImagenVector = ImagenVector + "Centro";
+                }else if(CampoElectrico1 < CampoElectrico2){
+                    ImagenVector = ImagenVector + "Arriba";
+                }else{
+                    ImagenVector = ImagenVector + "Abajo";
+                }
+            }
+            break;
+            
+            case 1:
+                if (SignoCarga1 != SignoCarga2){
+                
+                if (SignoCarga1 < SignoCarga2){
+                    ImagenVector = ImagenVector + "Arriba";
+                }else{
+                    ImagenVector = ImagenVector + "Abajo";
+                }
+            }else{
+                if (CampoElectrico1 == CampoElectrico2){
+                    ImagenVector = ImagenVector + "Centro";
+                }else if(CampoElectrico1 < CampoElectrico2){
+                    ImagenVector = ImagenVector + "Arriba";
+                }else{
+                    ImagenVector = ImagenVector + "Abajo";
+                }
+            }
+            break;
+        }
+        
+        
+       
 
 
 
@@ -540,6 +620,12 @@ public class cargaEjerce2Select extends javax.swing.JFrame {
         pagResultados.campoElectxt.setText(String.valueOf(ResultadoCampoElec));
         pagResultados.Potencialtxt.setText(String.valueOf(ResultadoPotencialElectrico));
         
+        //asigna las imagenes
+        Image Vector = new ImageIcon(getClass().getResource(ImagenVector)).getImage();
+        pagResultados.VectorImg.setIcon(new ImageIcon(Vector));
+        
+        Image Carga = new ImageIcon(getClass().getResource(ImagenCargas)).getImage();
+        pagResultados.CargaImagen.setIcon(new ImageIcon(Carga));
         
         dispose();
     
