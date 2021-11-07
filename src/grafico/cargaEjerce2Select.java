@@ -587,6 +587,14 @@ public class cargaEjerce2Select extends javax.swing.JFrame {
         
         System.out.println("base "+base);
         System.out.println("exponente "+exponente);
+                
+                if (i == 1){
+                ResultadoCampoElec = base;
+                ExponenteCampoElec = exponente;
+            }else{
+                ResultadoPotencialElectrico = base;
+                ExponentePotencialElectrico = exponente;
+            }
     }
         
         
@@ -618,7 +626,10 @@ public class cargaEjerce2Select extends javax.swing.JFrame {
        
         //Pasa los datos al siguiente JFrame
         pagResultados.campoElectxt.setText(String.valueOf(ResultadoCampoElec));
+        pagResultados.exponenteCampoElectrico.setText(String.valueOf(ExponenteCampoElec));
+        
         pagResultados.Potencialtxt.setText(String.valueOf(ResultadoPotencialElectrico));
+        pagResultados.exponentePotencialElectrico.setText(String.valueOf(ExponentePotencialElectrico));
         
         //asigna las imagenes
         Image Vector = new ImageIcon(getClass().getResource(ImagenVector)).getImage();
