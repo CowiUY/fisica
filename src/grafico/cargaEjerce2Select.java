@@ -330,17 +330,23 @@ public class cargaEjerce2Select extends javax.swing.JFrame {
         
         double distanciaCarga2Q = pedrito.Potencia(Double.parseDouble(jTextField10.getText().trim()), Double.parseDouble(potenciaQ2P.getText().trim()));
         
-        //Guardo los datos
-        unidades Datos = new unidades(carga1, distanciaCarga);
+        
         
         double base = 0;
         int exponente = 0;
 
+        //Guardo los datos
+        unidades Datos = new unidades(carga1, carga2, distanciaCarga, distanciaCarga1Q, distanciaCarga2Q);
+        
+        //Calcula y pasa los datos a resultados Campo electrico
+        campoElectrico CampoElectrico = new campoElectrico(Datos);
+        double ResultadoCampoElec = CampoElectrico.CampoElectrico2Cargas(); 
+        int ExponenteCampoElec = 0;
 
-
-
-
-
+        //Calcula y pasa los datos a resultados potencial electrico
+        PotencialElectrico PotencialElectrico = new PotencialElectrico(Datos);
+        double ResultadoPotencialElectrico = PotencialElectrico.PotencialElectrico2Cargas();
+        int ExponentePotencialElectrico = 0;
 
 
 
@@ -495,16 +501,6 @@ public class cargaEjerce2Select extends javax.swing.JFrame {
         
         
         
-        
-        
-        //Inicializo un objeto tipo CampoElectrico
-        campoElectrico CampoElectrico = new campoElectrico(Datos);
-        
-        //Llamo métodos del objeto previamente inicializado
-        double ResultadoCampoElec = CampoElectrico.CampoElectrico1Carga();
-        
-        PotencialElectrico PotencialElectrico = new PotencialElectrico(Datos);
-        double ResultadoPotencialElectrico = PotencialElectrico.PotencialElectrico1Carga();
         
         
         
