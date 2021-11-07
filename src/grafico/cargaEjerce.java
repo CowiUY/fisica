@@ -199,6 +199,7 @@ calculos pedrito = new calculos();
         //Calcula y pasa los datos a resultados Campo electrico
         campoElectrico CampoElectrico = new campoElectrico(Datos);
         double ResultadoCampoElec = CampoElectrico.CampoElectrico1Carga(); 
+        int ExponenteCampoElec = 0;
         
         //Se ve el signo para el vector y asigna la imagen correspondiente
         boolean SignoCarga = carga1 > 0;
@@ -214,7 +215,7 @@ calculos pedrito = new calculos();
         //Calcula y pasa los datos a resultados Campo electrico
         PotencialElectrico PotencialElectrico = new PotencialElectrico(Datos);
         double ResultadoPotencialElectrico = PotencialElectrico.PotencialElectrico1Carga();
-                
+        int ExponentePotencialElectrico = 0;
         
         
         
@@ -235,31 +236,29 @@ calculos pedrito = new calculos();
             double carga;
             
             if (i == 1){
+                double usar = ResultadoCampoElec;
                 
                 
-                tieneE = pedrito.Everdad(carga1);        
-                carga = carga1;
+                tieneE = pedrito.Everdad(usar);        
+                carga = usar;
                 
-                base = carga1;
+                base = usar;
                 
             }else{
-                tieneE = pedrito.Everdad(distanciaCarga);
-                carga = distanciaCarga;
-                base = distanciaCarga;
+                double usar = ResultadoPotencialElectrico;
+                tieneE = pedrito.Everdad(usar);
+                carga = usar;
+                base = usar;
             }
-            
             
             System.out.println("carga = "+carga);
         if (tieneE == 0){
-            
-            
+                        
             if (carga >= 1){
                 System.out.println("carga mayor o igual a 1");
                 
                 exponente = pedrito.tiene0(carga);
                 base = pedrito.tiene0Base(carga);
-                    
-                
                 
             }else if (carga > 0 && carga < 1){// carga >0 && carga <1
                 System.out.println("carga mayor a 0 menor a 1");
@@ -281,19 +280,12 @@ calculos pedrito = new calculos();
                     System.out.println(base);
                 }
             }
-                
-                
-                
-                
-                
             
             }else if (carga <0){
                         System.out.println("Menor a 0");
                         exponente = pedrito.tiene0(carga);
                 base = pedrito.tiene0Base(carga);
                         }
-            
-            
             
         }else{
             System.out.println("Carga tiene E");
@@ -305,17 +297,18 @@ calculos pedrito = new calculos();
             System.out.println("");
             System.out.println("Carga antes de entrar "+base);
             System.out.println("");
-            
-            //exponente = pedrito.tiene0(temporal);
-            
-            //base = pedrito.cifras(base);
             base = pedrito.dosCS(base);
-            //exponente += pedrito.cifrasExp(pedrito.hayEBase(carga, tieneE));
         }
-            
-        
         System.out.println("base "+base);
         System.out.println("exponente "+exponente);
+        
+        if (i == 1){
+                ResultadoCampoElec = base;
+                ExponenteCampoElec = exponente;
+            }else{
+                ResultadoPotencialElectrico = base;
+                ExponentePotencialElectrico = exponente;
+            }
     }
         
         
@@ -332,7 +325,10 @@ calculos pedrito = new calculos();
        
         //Pasa los datos al siguiente JFrame
         pagResultados.campoElectxt.setText(String.valueOf(ResultadoCampoElec));
+        pagResultados.exponenteCampoElectrico.setText(String.valueOf(ExponenteCampoElec));
+        
         pagResultados.Potencialtxt.setText(String.valueOf(ResultadoPotencialElectrico));
+        pagResultados.exponentePotencialElectrico.setText(String.valueOf(ExponentePotencialElectrico));
         
         Image Vector = new ImageIcon(getClass().getResource(ImagenVector)).getImage();
         pagResultados.VectorImg.setIcon(new ImageIcon(Vector));
