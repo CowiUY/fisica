@@ -71,7 +71,6 @@ public class cargaEjerce2Select extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1000, 700));
         setResizable(false);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
