@@ -45,25 +45,12 @@ public class calculos {
 
     
     
-    //double intogor = 816;
-        //System.out.println(intogor);
-        
-        
         
         int bonjour = Everdad(intogor);
         
         
         
 
-    //LEER ==>    
-        //IVÁN ESTO HAY QUE IMPORTARLO AL CÓDIGO         
-        
-        
-
-    //LEER ==>    
-        //IVÁN ESTO HAY QUE IMPORTARLO AL CÓDIGO 
-    
-        
         
     /*
     
@@ -138,13 +125,13 @@ public class calculos {
 
     Boolean roberto = false;
 
-    for (int i = 0; i < lucio.length() ; i++) {
+    for (int i = 0; i < lucio.length()-1 ; i++) {
         if (lucio.charAt(i) == 'E'){
             System.out.println(lucio.charAt(i));
             System.out.println("E DETECTED");
             roberto = true;
             verdad = true;
-        }else{
+        }else if (!verdad){
             System.out.println(lucio.charAt(i));
             System.out.println("NEGATIVO CENTRAL");
 
@@ -168,32 +155,78 @@ public class calculos {
         
         public int tiene0(double number){
             int vueltas = 0;
-            String etrin = ""+number;
             
-            //EN PROCESO
-            Boolean antesdeiralbailecomopizzamuzzarella = false;
-            //TERMINA EN PROCESO
-            for (int i = etrin.length() -1; i >= 0; i--){ //AGREGAR BOOLEAN
-                    System.out.println("I es "+i);
-                    System.out.println(etrin.charAt(i));
-                    
-                    if (etrin.charAt(i) == '0'){// && antesdeiralbailecomopizzamuzzarella == false){
-                        System.out.println("I es 0; I es "+etrin.charAt(i));
-                        vueltas++;
-                        System.out.println("vueltas++ "+vueltas);
-                    }else{
-                        System.out.println("antesdeiralbailecomopizzamuzzarella false");
-                        antesdeiralbailecomopizzamuzzarella = true;
-                    }
-                    
-        }
             
-            System.out.println("antesdeiralbailecomopizzamuzzarella "+antesdeiralbailecomopizzamuzzarella);
+            
+            
+            int numerito = (int) Math.round(number);
+            System.out.println("numerito = "+numerito);
+            String etrin = String.valueOf(numerito);
+            
+            while (etrin.length() != 2){
+                System.out.println("etrin p = " +etrin);
+                numerito /= 10;
+                etrin = String.valueOf(numerito);
+                System.out.println("etrin a = "+etrin);
                 System.out.println("");
-                System.out.println("vueltas= "+vueltas);
+                System.out.println("");
+                vueltas++;
+            }
+            
+            
             return vueltas;
         }
         
+        
+        
+        public int tiene0Base(double number){
+            
+            int numerito = (int) Math.round(number);
+            String etrin = String.valueOf(numerito);
+            while (etrin.length() != 2){
+                System.out.println("etrin p = " +etrin);
+                numerito /= 10;
+                etrin = String.valueOf(numerito);
+                System.out.println("etrin a = "+etrin);
+                System.out.println("");
+                System.out.println("");
+                
+            }
+                return Integer.parseInt(etrin);
+        }
+        
+        
+        public int cifras(double number){
+            String etrin = String.valueOf(number);
+            int numerito = (int) Math.round(number);
+            while (etrin.length() != 2){
+                System.out.println("etrin p = " +etrin);
+                numerito *= 10;
+                etrin = String.valueOf(numerito);
+                System.out.println("etrin a = "+etrin);
+                System.out.println("");
+                System.out.println("");
+                
+            }
+                return Integer.parseInt(etrin);
+        }
+        
+        public int cifrasExp(double number){
+            String etrin = String.valueOf(number);
+            int numerito = (int) Math.round(number);
+            int vueltas =0;
+            while (etrin.length() != 2){
+                System.out.println("etrin p = " +etrin);
+                numerito *= 10;
+                vueltas++;
+                etrin = String.valueOf(numerito);
+                System.out.println("etrin a = "+etrin);
+                System.out.println("");
+                System.out.println("");
+                
+            }
+                return vueltas;
+        }
 
     
     //Si el número es 0.algo...
@@ -224,11 +257,40 @@ public static int RobertoGomez(double number){
         
         //System.out.println(peo);
     }
-   return vueltas;
+    //vueltas = -vueltas;
+   return -vueltas;
 }
     
     
     
+    public double hayEBase(double carga, int tieneE){
+        
+        String etrin = String.valueOf(carga);
+            String abajation = "";
+            
+            //for (int z = tieneE+1; z < etrin.length()-1; z++){
+            for (int z = 0; z < tieneE; z++){
+                abajation += etrin.charAt(z);
+            }
+        
+        
+        
+        return Double.parseDouble(abajation);
+        
+    }
+    
+    public double hayExponente(double carga, int tieneE){
+            String etrin = ""+carga;
+            String francisco="";
+            
+            for (int z = tieneE+1; z <= etrin.length()-1; z++){
+                francisco += etrin.charAt(z);
+                
+            }
+            
+            
+            return Double.parseDouble(francisco);
+    }
     
     
     

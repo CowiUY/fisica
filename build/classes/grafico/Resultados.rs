@@ -1,0 +1,2 @@
+grafico.Resultados
+grafico.FondoPanel

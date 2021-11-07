@@ -7,7 +7,8 @@ package grafico;
 
 /**
  *
- * @author Gabriel
+ * @author Gab
+ * riel
  */
 
 import java.awt.Color;
@@ -332,15 +333,16 @@ public class cargaEjerce2Select extends javax.swing.JFrame {
         //Guardo los datos
         unidades Datos = new unidades(carga1, distanciaCarga);
         
-        double base;
-        double exponente = 0;
+        double base = 0;
+        int exponente = 0;
         
-        
+        //Decide cuál va a ser el valor a tratar...
         for (int i = 1; i <=2; i++){
             int tieneE;
             double carga;
             
             if (i == 1){
+                
                 
                 tieneE = pedrito.Everdad(carga1);        
                 carga = carga1;
@@ -353,33 +355,36 @@ public class cargaEjerce2Select extends javax.swing.JFrame {
                 base = carga2;
             }
             
+            
+            System.out.println("carga = "+carga);
         if (tieneE == 0){
             
-            System.out.println("NO TIENE E");
-            //CODIGO EN PROCESO
-            if (carga > 1){
-                System.out.println("MAYOR A UNO");
-                exponente = pedrito.tiene0(carga) - 1;
+            
+            if (carga >= 1){
+                System.out.println("carga mayor o igual a 1");
+                
+                exponente = pedrito.tiene0(carga);
+                base = pedrito.tiene0Base(carga);
                     
                 
                 
             }else if (carga > 0 && carga < 1){
+                System.out.println("carga mayor a 0 menor a 1");
                 
                 //SI el número es 0. algo
-            int exponenteadentro = pedrito.RobertoGomez(carga);
-            System.out.println("exponente = " +exponenteadentro);
-                double down = carga;
-                for(int d = 0; d < exponenteadentro; d++){
-                    down = down *10;
-                    System.out.println("");
-                    System.out.println(down);
-                }
-                System.out.println("abajo = "+down);
-                base = down;
-                System.out.println("El número sería "+down + " exponente "+exponenteadentro);
-                exponente = exponenteadentro;
+            exponente = pedrito.RobertoGomez(carga);
+            
                 
-                //PASAR EXPONENTE A NEGATIVO CON UN FORI VAR=EXPONENTE ANTES ; --
+                for(int d = 0; d < exponente; d++){
+                    base = base *10;
+                    System.out.println("");
+                    System.out.println(base);
+                }
+                
+                
+                
+                
+                
                 
             
             }
@@ -387,29 +392,23 @@ public class cargaEjerce2Select extends javax.swing.JFrame {
             
             
         }else{
-            
-            //TIENE E EN POSICION VARIABLE tieneE
-                System.out.println("Tiene E en "+tieneE);
+            System.out.println("Carga tiene E");
                 
-                
-            //francisco guarda el numerito de abajo
-            String etrin = ""+carga;
-            String francisco="";
-            for (int z = 0; z < carga; z++){
-                francisco += etrin.charAt(z);
-            }
-            System.out.println("fran = "+francisco);
+            //double temporal = pedrito.hayEBase(carga, tieneE);
             
-            String abajation = "";
+            exponente = (int) pedrito.hayExponente(carga, tieneE);
+            base = pedrito.hayEBase(carga, tieneE);
             
-            for (int z = tieneE+1; z < etrin.length(); z++){
-                abajation += etrin.charAt(z);
-            }
-            System.out.println("abajation = "+abajation);
+            //exponente = pedrito.tiene0(temporal);
+            
+            base = pedrito.cifras(base);
+            exponente += pedrito.cifrasExp(pedrito.hayEBase(carga, tieneE));
         }
             
-    }
         
+        System.out.println("base "+base);
+        System.out.println("exponente "+exponente);
+    }
         
         
         
@@ -445,8 +444,8 @@ public class cargaEjerce2Select extends javax.swing.JFrame {
         
         
          
-        Resultados pagResultados = new Resultados();
-        pagResultados.setVisible(true);
+    /*    Resultados pagResultados = new Resultados();
+    //    pagResultados.setVisible(true);
        
         //Pasa los datos al siguiente JFrame
         pagResultados.campoElectxt.setText(String.valueOf(ResultadoCampoElec));
@@ -454,6 +453,7 @@ public class cargaEjerce2Select extends javax.swing.JFrame {
         pagResultados.campoElectxt.setText("hola");
         
         dispose();
+    */
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
