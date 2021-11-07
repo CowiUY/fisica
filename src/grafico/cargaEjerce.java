@@ -183,13 +183,18 @@ FondoPanel fondo = new FondoPanel();
     }//GEN-LAST:event_InputDistanciaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+calculos pedrito = new calculos();
 
+        double carga1 = pedrito.Potencia(Double.parseDouble(InputCarga.getText().trim()), Double.parseDouble(potenciaCarga1.getText().trim()));
         
-        double carga1 = Double.parseDouble(InputCarga.getText());        
-        double distanciaCarga = Double.parseDouble(InputDistancia.getText());
+        
+        double distanciaCarga = pedrito.Potencia(Double.parseDouble(InputDistancia.getText().trim()), Double.parseDouble(potenciaCarga2.getText().trim()));
         
         //Se guardan todos los datos del formulario en Datos
         unidades Datos = new unidades(carga1, distanciaCarga);
+        
+        
+        
         
         //Calcula y pasa los datos a resultados Campo electrico
         campoElectrico CampoElectrico = new campoElectrico(Datos);
@@ -210,6 +215,117 @@ FondoPanel fondo = new FondoPanel();
         PotencialElectrico PotencialElectrico = new PotencialElectrico(Datos);
         double ResultadoPotencialElectrico = PotencialElectrico.PotencialElectrico1Carga();
                 
+        
+        
+        
+        double base = 0;
+        int exponente = 0;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        //Decide cuál va a ser el valor a tratar...
+        for (int i = 1; i <=2; i++){
+            int tieneE;
+            double carga;
+            
+            if (i == 1){
+                
+                
+                tieneE = pedrito.Everdad(carga1);        
+                carga = carga1;
+                
+                base = carga1;
+                
+            }else{
+                tieneE = pedrito.Everdad(distanciaCarga);
+                carga = distanciaCarga;
+                base = distanciaCarga;
+            }
+            
+            
+            System.out.println("carga = "+carga);
+        if (tieneE == 0){
+            
+            
+            if (carga >= 1){
+                System.out.println("carga mayor o igual a 1");
+                
+                exponente = pedrito.tiene0(carga);
+                base = pedrito.tiene0Base(carga);
+                    
+                
+                
+            }else if (carga > 0 && carga < 1){// carga >0 && carga <1
+                System.out.println("carga mayor a 0 menor a 1");
+                
+                //SI el número es 0. algo
+            exponente = pedrito.RobertoGomez(carga);
+            
+            if (exponente > 0){    
+            
+                for(int d = 0; d < exponente; d++){
+                    base = base *10;
+                    System.out.println("");
+                    System.out.println(base);
+                }
+            }else{
+                for(int d = 0; d > exponente; d--){
+                    base = base *10;
+                    System.out.println("");
+                    System.out.println(base);
+                }
+            }
+                
+                
+                
+                
+                
+            
+            }else if (carga <0){
+                        System.out.println("Menor a 0");
+                        exponente = pedrito.tiene0(carga);
+                base = pedrito.tiene0Base(carga);
+                        }
+            
+            
+            
+        }else{
+            System.out.println("Carga tiene E");
+                
+            //double temporal = pedrito.hayEBase(carga, tieneE);
+            
+            exponente = (int) pedrito.hayExponente(carga, tieneE);
+            base = pedrito.hayEBase(carga, tieneE);
+            System.out.println("");
+            System.out.println("Carga antes de entrar "+base);
+            System.out.println("");
+            
+            //exponente = pedrito.tiene0(temporal);
+            
+            //base = pedrito.cifras(base);
+            base = pedrito.dosCS(base);
+            //exponente += pedrito.cifrasExp(pedrito.hayEBase(carga, tieneE));
+        }
+            
+        
+        System.out.println("base "+base);
+        System.out.println("exponente "+exponente);
+    }
+        
+        
+        
+        
+        
+        
+        
+        
+        
         //Abre el siguiente Jframe 
         Resultados pagResultados = new Resultados();
         pagResultados.setVisible(true);
