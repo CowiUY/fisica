@@ -379,11 +379,11 @@ public class cargaEjerce2Select extends javax.swing.JFrame {
         }
         
         switch (SignoCarga2){
-            case 1: ImagenCargas = ImagenCargas + "Positiva";
+            case 1: ImagenCargas = ImagenCargas + "Positiva.png";
             break;
-            case 0: ImagenCargas = ImagenCargas + "Neutra";
+            case 0: ImagenCargas = ImagenCargas + "Neutra.png";
             break;
-            case -1: ImagenCargas = ImagenCargas + "Negativa";
+            case -1: ImagenCargas = ImagenCargas + "Negativa.png";
             break;
         }
 
