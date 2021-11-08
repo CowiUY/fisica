@@ -37,7 +37,7 @@ public class calculos {
     //Metodo que devuelve el lado opuesto al Angulo
     static public double TeoremaCoseno(double Lado1, double Lado2, double Angulo){
         double AnguloRadios = Math.toRadians(Angulo);
-        double Lado3 = (Lado1 * Lado1) + (Lado2 * Lado2) - 2 * Lado1 * Lado2 * Math.cos(AnguloRadios);
+        double Lado3 = (Lado1 * Lado1) + (Lado2 * Lado2) - 2 * Lado1 * Lado2 * (Math.round(Math.cos(AnguloRadios)*1000.0)/1000.0);
         Lado3 = Math.sqrt(Lado3);
         
         return Lado3;

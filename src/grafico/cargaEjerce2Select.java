@@ -388,7 +388,7 @@ public class cargaEjerce2Select extends javax.swing.JFrame {
         }
 
         //le asigna una imagen de vector
-        String ImagenVector = "/Vectores/";
+        String ImagenVector = "/Vectores/Vector";
         
         int SignoCampoElec;
         if (ResultadoCampoElec == 0){
@@ -415,17 +415,17 @@ public class cargaEjerce2Select extends javax.swing.JFrame {
                 if (SignoCarga1 != SignoCarga2){
                 
                 if (SignoCarga1 < SignoCarga2){
-                    ImagenVector = ImagenVector + "Arriba";
+                    ImagenVector = ImagenVector + "Arriba.png";
                 }else{
-                    ImagenVector = ImagenVector + "Abajo";
+                    ImagenVector = ImagenVector + "Abajo.png";
                 }
             }else{
                 if (CampoElectrico1 == CampoElectrico2){
-                    ImagenVector = ImagenVector + "Centro";
+                    ImagenVector = ImagenVector + "Centro.png";
                 }else if(CampoElectrico1 < CampoElectrico2){
-                    ImagenVector = ImagenVector + "Arriba";
+                    ImagenVector = ImagenVector + "Arriba.png";
                 }else{
-                    ImagenVector = ImagenVector + "Abajo";
+                    ImagenVector = ImagenVector + "Abajo.png";
                 }
             }
             break;
@@ -434,20 +434,22 @@ public class cargaEjerce2Select extends javax.swing.JFrame {
                 if (SignoCarga1 != SignoCarga2){
                 
                 if (SignoCarga1 < SignoCarga2){
-                    ImagenVector = ImagenVector + "Arriba";
+                    ImagenVector = ImagenVector + "Arriba.png";
                 }else{
-                    ImagenVector = ImagenVector + "Abajo";
+                    ImagenVector = ImagenVector + "Abajo.png";
                 }
             }else{
                 if (CampoElectrico1 == CampoElectrico2){
-                    ImagenVector = ImagenVector + "Centro";
+                    ImagenVector = ImagenVector + "Centro.png";
                 }else if(CampoElectrico1 < CampoElectrico2){
-                    ImagenVector = ImagenVector + "Arriba";
+                    ImagenVector = ImagenVector + "Arriba.png";
                 }else{
-                    ImagenVector = ImagenVector + "Abajo";
+                    ImagenVector = ImagenVector + "Abajo.png";
                 }
             }
             break;
+                
+                
         }
         
         
@@ -635,6 +637,11 @@ public class cargaEjerce2Select extends javax.swing.JFrame {
         pagResultados.exponentePotencialElectrico.setText(String.valueOf(ExponentePotencialElectrico));
         
         //asigna las imagenes
+        System.out.println("\n \n \n \n \n \n \n j");
+        System.out.println(ImagenVector);
+        System.out.println(ImagenCargas);
+        System.out.println("\n \n \n \n \n \n \n j");
+        
         Image Vector = new ImageIcon(getClass().getResource(ImagenVector)).getImage();
         pagResultados.VectorImg.setIcon(new ImageIcon(Vector));
         
