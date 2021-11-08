@@ -198,10 +198,10 @@ FondoPanel fondo = new FondoPanel();
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         calculos pedrito = new calculos();
-        double carga1 = pedrito.Potencia(Double.parseDouble(InputCarga.getText().trim()), Double.parseDouble(potenciaCarga1.getText().trim()));
+        double carga1 = pedrito.Potencia(Double.parseDouble(InputCarga.getText().trim()), (0 + Double.parseDouble(potenciaCarga1.getText().trim())));
         
         
-        double distanciaCarga = pedrito.Potencia(Double.parseDouble(InputDistancia.getText().trim()), Double.parseDouble(potenciaCarga2.getText().trim()));
+        double distanciaCarga = pedrito.Potencia(Double.parseDouble(InputDistancia.getText().trim()), (0 + Double.parseDouble(potenciaCarga2.getText().trim())));
         if(distanciaCarga > 0){
             //Se guardan todos los datos del formulario en Datos
         unidades Datos = new unidades(carga1, distanciaCarga);

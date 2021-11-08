@@ -330,16 +330,16 @@ public class cargaEjerce2Select extends javax.swing.JFrame {
         calculos pedrito = new calculos();
         
         
-        double carga1 = pedrito.Potencia(Double.parseDouble(jTextField1.getText().trim()), Double.parseDouble(potenciaCarga1.getText().trim()));
+        double carga1 = pedrito.Potencia(Double.parseDouble(jTextField1.getText().trim()), (0 + Double.parseDouble(potenciaCarga1.getText().trim())));
         
-        double carga2 = pedrito.Potencia(Double.parseDouble(jTextField2.getText().trim()), Double.parseDouble(potenciaCarga2.getText().trim()));
+        double carga2 = pedrito.Potencia(Double.parseDouble(jTextField2.getText().trim()), (0 + Double.parseDouble(potenciaCarga2.getText().trim())));
         
         
-        double distanciaCarga = pedrito.Potencia(Double.parseDouble(jTextField6.getText().trim()), Double.parseDouble(potenciaq1q2.getText().trim()));
+        double distanciaCarga = pedrito.Potencia(Double.parseDouble(jTextField6.getText().trim()), (0 +Double.parseDouble(potenciaq1q2.getText().trim())));
         
-        double distanciaCarga1Q = pedrito.Potencia(Double.parseDouble(jTextField8.getText().trim()), Double.parseDouble(potenciaQ1P.getText().trim()));
+        double distanciaCarga1Q = pedrito.Potencia(Double.parseDouble(jTextField8.getText().trim()), (0 + Double.parseDouble(potenciaQ1P.getText().trim())));
         
-        double distanciaCarga2Q = pedrito.Potencia(Double.parseDouble(jTextField10.getText().trim()), Double.parseDouble(potenciaQ2P.getText().trim()));
+        double distanciaCarga2Q = pedrito.Potencia(Double.parseDouble(jTextField10.getText().trim()), (0 + Double.parseDouble(potenciaQ2P.getText().trim())));
         
         if(distanciaCarga > 0 && distanciaCarga1Q > 0 && distanciaCarga2Q > 0){
             double base = 0;
