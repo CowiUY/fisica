@@ -648,7 +648,7 @@ public class cargaEjerce2Select extends javax.swing.JFrame {
                         
                         
                         String strBaseResuelta = String.valueOf(base);
-                        
+
                         if (strBase.length() > strBaseResuelta.length()){
                                 System.out.println("");
                                 System.out.println("");
