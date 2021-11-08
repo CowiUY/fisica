@@ -207,39 +207,18 @@ public class calculos {
         
         public int tiene0Base(double number){
             
-            int vueltas = 0;
-            
-            
-            
-            
-            //int numerito = (int) Math.round(number);
             int numerito = (int) number;
-            System.out.println("numerito = "+numerito);
             String etrin = String.valueOf(numerito);
-                        
-            if (etrin.length() >= 3){
-                while (etrin.length() != 2){
+            while (etrin.length() != 2){
                 System.out.println("etrin p = " +etrin);
                 numerito /= 10;
                 etrin = String.valueOf(numerito);
                 System.out.println("etrin a = "+etrin);
                 System.out.println("");
                 System.out.println("");
-                vueltas++;
+                
             }
-            }else
-            
-            
-                while (etrin.length() != 2){
-                System.out.println("etrin p = " +etrin);
-                numerito *= 10;
-                etrin = String.valueOf(numerito);
-                System.out.println("etrin a = "+etrin);
-                System.out.println("");
-                System.out.println("");
-                vueltas++;
-            }
-            return vueltas;
+                return Integer.parseInt(etrin);
         }
         
         public double dosCS(double number){

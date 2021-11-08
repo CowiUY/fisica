@@ -507,6 +507,22 @@ public class cargaEjerce2Select extends javax.swing.JFrame {
             double carga;
             
             if (i == 1){
+                System.out.println("");
+                System.out.println("");
+                System.out.println("");
+                System.out.println("");
+                System.out.println("");
+                System.out.println("");
+                System.out.println("");
+                System.out.println("HABEMUS CARGA NUEVA");
+                System.out.println("");
+                System.out.println("");
+                System.out.println("");
+                System.out.println("");
+                System.out.println("");
+                System.out.println("");
+                System.out.println("");
+                
                 
                 
                 tieneE = pedrito.Everdad(carga1);        
@@ -515,6 +531,22 @@ public class cargaEjerce2Select extends javax.swing.JFrame {
                 base = carga1;
                 
             }else{
+                
+                System.out.println("");
+                System.out.println("");
+                System.out.println("");
+                System.out.println("");
+                System.out.println("");
+                System.out.println("");
+                System.out.println("");
+                System.out.println("HABEMUS CARGA2 NUEVA");
+                System.out.println("");
+                System.out.println("");
+                System.out.println("");
+                System.out.println("");
+                System.out.println("");
+                System.out.println("");
+                System.out.println("");
                 tieneE = pedrito.Everdad(carga2);
                 carga = carga2;
                 base = carga2;
@@ -527,16 +559,49 @@ public class cargaEjerce2Select extends javax.swing.JFrame {
 
                         if (carga >= 1){
                             System.out.println("carga mayor o igual a 1");
-
-                            if (pedrito.tiene0(carga) == carga){
+                            
+                            //int vuelteitons = pedrito.tiene0(carga);
+/*
+                            if (vuelteitons == carga){
                                 exponente = 0;
                             }else{
-                                exponente = pedrito.tiene0(carga);
+                                //exponente = pedrito.tiene0(carga);
+                                exponente = 8;
                             }
+  */                          
+                            //System.out.println("");
+                            //System.out.println("");
+                            
+                            exponente = pedrito.tiene0(carga);
+                            
 
-                            base = pedrito.tiene0(carga);
+                            //System.out.println(pedrito.tiene0(carga));
+                            //base = pedrito.tiene0(carga);
+                            base = pedrito.tiene0Base(carga);
+                            
+                            //String etrin = String.valueOf(vuelteitons);
+                            /*
+                            while (etrin.length() != vuelteitons){
+                System.out.println("etrin p = " +etrin);
+                vuelteitons /= 10;
+                etrin = String.valueOf(vuelteitons);
+                System.out.println("etrin a = "+etrin);
+                System.out.println("");
+                System.out.println("");
+                            }
+                            
+                            
+  */                          
+/*
+                            
+                            for (int I = vuelteitons; i >=0; i--){
+                                System.out.println("Base estaba en "+base);
+                                base = base/10;
+                                System.out.println("Base queda "+base);}
+                            
+                            
                             System.out.println("Base = "+base);
-
+*/System.out.println("mayor igual 1");
                         }else if (carga > 0 && carga < 1){// carga >0 && carga <1
                             System.out.println("carga mayor a 0 menor a 1");
 
