@@ -256,13 +256,17 @@ public class Resultados extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVolverMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverMenuActionPerformed
- dispose();
+ 
+        mainScreen pagmainScreen = new mainScreen();
+        pagmainScreen.setVisible(true); 
+        
+        
+        dispose();
          /*
         cargaEjercida pagCalculator = new cargaEjercida();
         pagCalculator.setVisible(true);*/
          
-        mainScreen pagmainScreen = new mainScreen();
-        pagmainScreen.setVisible(true);        // TODO add your handling code here:
+               // TODO add your handling code here:
     }//GEN-LAST:event_btnVolverMenuActionPerformed
 
     /**

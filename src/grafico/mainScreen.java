@@ -94,13 +94,15 @@ FondoPanel fondo = new FondoPanel();
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
         // TODO add your handling code here:
         //IVAN NO HAY NADA ACA!!!!!!!
-         dispose();
+         SelecCargas pagSelecCargas = new SelecCargas();
+        pagSelecCargas.setVisible(true);
+        
+        dispose();
          /*
         cargaEjercida pagCalculator = new cargaEjercida();
         pagCalculator.setVisible(true);*/
          
-        SelecCargas pagSelecCargas = new SelecCargas();
-        pagSelecCargas.setVisible(true);
+        
         
         
     }//GEN-LAST:event_jToggleButton1ActionPerformed

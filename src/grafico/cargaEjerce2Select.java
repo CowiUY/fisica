@@ -69,6 +69,7 @@ public class cargaEjerce2Select extends javax.swing.JFrame {
         potenciaQ2P = new javax.swing.JTextField();
         potenciaq1q2 = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
+        AtrasBoton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -174,6 +175,14 @@ public class cargaEjerce2Select extends javax.swing.JFrame {
         jLabel18.setForeground(new java.awt.Color(255, 255, 0));
         jLabel18.setText("C");
 
+        AtrasBoton.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+        AtrasBoton.setText("Atras");
+        AtrasBoton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AtrasBotonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -241,7 +250,11 @@ public class cargaEjerce2Select extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jButton1))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(73, 73, 73)
+                                .addComponent(AtrasBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(156, 156, 156)
+                                .addComponent(jButton1)))
                         .addContainerGap())))
         );
         layout.setVerticalGroup(
@@ -296,9 +309,11 @@ public class cargaEjerce2Select extends javax.swing.JFrame {
                     .addComponent(jLabel17)
                     .addComponent(jLabel15)
                     .addComponent(potenciaQ2P, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(36, 36, 36)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(AtrasBoton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 91, Short.MAX_VALUE))
+                .addGap(25, 25, 25))
         );
 
         pack();
@@ -326,9 +341,8 @@ public class cargaEjerce2Select extends javax.swing.JFrame {
         
         double distanciaCarga2Q = pedrito.Potencia(Double.parseDouble(jTextField10.getText().trim()), Double.parseDouble(potenciaQ2P.getText().trim()));
         
-        
-        
-        double base = 0;
+        if(distanciaCarga > 0 && distanciaCarga1Q > 0 && distanciaCarga2Q > 0){
+            double base = 0;
         int exponente = 0;
 
         //Guardo los datos
@@ -720,6 +734,13 @@ public class cargaEjerce2Select extends javax.swing.JFrame {
         
         dispose();
     
+        }else{
+            JOptionPane.showMessageDialog(this,"La distancia hacia el punto no puede ser negativa ni 0");
+                distanciaCarga=0;
+        
+        }
+        
+        
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -738,6 +759,13 @@ public class cargaEjerce2Select extends javax.swing.JFrame {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handlingjLabel1.SetForeground(Color.GREEN); code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void AtrasBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AtrasBotonActionPerformed
+         //Abre el siguiente Jframe 
+        SelecCargas pagResultados = new SelecCargas();
+        pagResultados.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_AtrasBotonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -776,6 +804,7 @@ public class cargaEjerce2Select extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AtrasBoton;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

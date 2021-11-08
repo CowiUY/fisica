@@ -51,7 +51,7 @@
               </Group>
               <EmptySpace pref="120" max="32767" attributes="0"/>
               <Component id="jToggleButton1" min="-2" pref="55" max="-2" attributes="0"/>
-              <EmptySpace pref="108" max="32767" attributes="0"/>
+              <EmptySpace pref="111" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>

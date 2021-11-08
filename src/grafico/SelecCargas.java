@@ -84,7 +84,7 @@ public class SelecCargas extends javax.swing.JFrame {
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
                 .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(108, Short.MAX_VALUE))
+                .addContainerGap(111, Short.MAX_VALUE))
         );
 
         pack();
@@ -100,17 +100,17 @@ public class SelecCargas extends javax.swing.JFrame {
         String itemSeleccionado = (String)jComboBox1.getSelectedItem();
  
         if (itemSeleccionado.equals("1")){
-            System.out.println("FUNCIONAAAA\n1");
             cargaEjerce pagCargaEjerce1 = new cargaEjerce();
-            dispose();
             pagCargaEjerce1.setVisible(true);
-        }else if(itemSeleccionado == "2"){
-            System.out.println("FUNCIONAAAA\n2");
-            cargaEjerce2Select pagCargaEjerce2 = new cargaEjerce2Select();
             dispose();
+            
+        }else if(itemSeleccionado == "2"){
+            cargaEjerce2Select pagCargaEjerce2 = new cargaEjerce2Select();
             pagCargaEjerce2.setVisible(true);
+            dispose();
+            
         }else if (itemSeleccionado == "3"){
-            System.out.println("FUNCIONAAAA\n3");
+            
             
             
         }
