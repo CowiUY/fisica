@@ -31,7 +31,8 @@ public class campoElectrico{
             
             double campoElecCarga2 = ((datos.K*datos.Q2)/Math.pow(datos.DistanciaPtoQ2, 2));
             
-            
+            campoElecCarga1 = (Math.round(campoElecCarga1 *1000.0) / 1000.0);
+            campoElecCarga2 = (Math.round(campoElecCarga2 *1000.0) / 1000.0);
             double suma = suma2vectores(campoElecCarga1, campoElecCarga2);
             
         return suma;
