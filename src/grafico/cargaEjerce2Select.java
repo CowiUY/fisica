@@ -525,9 +525,18 @@ public class cargaEjerce2Select extends javax.swing.JFrame {
             
             if (carga >= 1){
                 System.out.println("carga mayor o igual a 1");
+                System.out.println("Entra a método exponente tiene 0 "+carga);
+                if (pedrito.tiene0(carga) == carga){
+                    exponente = 0;
+                }else{
+                exponente = pedrito.tiene0(carga);    
+                }
                 
-                exponente = pedrito.tiene0(carga);
-                base = pedrito.tiene0Base(carga);
+                
+                System.out.println("Entra a método base tiene 0 "+carga);
+                base = pedrito.tiene0(carga);
+                
+                //System.out.println(pedrito.tiene0(0.125));
                     
                 
                 

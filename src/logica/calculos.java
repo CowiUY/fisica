@@ -156,6 +156,59 @@ public class calculos {
         public int tiene0(double number){
             int vueltas = 0;
             
+            //int numerito = (int) Math.round(number);
+            int numerito = (int) number;
+            System.out.println("numerito = "+numerito);
+            String etrin = String.valueOf(numerito);
+            System.out.println("String antes de entrar = "+etrin);
+            System.out.println("String length "+etrin.length());
+                        
+            if (etrin.length() >= 3){
+                while (etrin.length() != 2){
+                System.out.println("etrin p = " +etrin);
+                numerito /= 10;
+                etrin = String.valueOf(numerito);
+                System.out.println("etrin a = "+etrin);
+                System.out.println("");
+                System.out.println("");
+                vueltas++;
+            }System.out.println("SALGO DEL IF CON "+numerito);
+                return vueltas;
+                
+            }else{
+            
+                
+                   System.out.println("ENTRA A WHILE 179 "+numerito);
+            System.out.println("Etrin length "+etrin.length());
+            
+            Boolean pito = false;
+            
+                while (etrin.length() != 2){
+                    System.out.println("ENTRó A WHILE 179 "+numerito);
+                System.out.println("etrin p = " +etrin);
+                numerito *= 10;
+                etrin = String.valueOf(numerito);
+                System.out.println("etrin a = "+etrin);
+                System.out.println("");
+                System.out.println("");
+                vueltas++;
+                pito = true;
+                }
+                if (pito){
+                return vueltas;    
+                }
+                
+            }
+            
+            return numerito;
+        }
+        
+        
+        
+        public int tiene0Base(double number){
+            
+            int vueltas = 0;
+            
             
             
             
@@ -163,7 +216,7 @@ public class calculos {
             int numerito = (int) number;
             System.out.println("numerito = "+numerito);
             String etrin = String.valueOf(numerito);
-            
+                        
             if (etrin.length() >= 3){
                 while (etrin.length() != 2){
                 System.out.println("etrin p = " +etrin);
@@ -186,47 +239,7 @@ public class calculos {
                 System.out.println("");
                 vueltas++;
             }
-                
-            
-                    System.out.println("TIENE 0 MENOR A 0");
-                    
-                    while (etrin.length() != 2){
-                System.out.println("etrin p = " +etrin);
-                numerito /= 10;
-                etrin = String.valueOf(numerito);
-                System.out.println("etrin a = "+etrin);
-                System.out.println("");
-                System.out.println("");
-                vueltas++;
-                    }
-            
-            
-        
-            
-            
-            
-            
-            
-            
             return vueltas;
-        }
-        
-        
-        
-        public int tiene0Base(double number){
-            
-            int numerito = (int) number;
-            String etrin = String.valueOf(numerito);
-            while (etrin.length() != 2){
-                System.out.println("etrin p = " +etrin);
-                numerito /= 10;
-                etrin = String.valueOf(numerito);
-                System.out.println("etrin a = "+etrin);
-                System.out.println("");
-                System.out.println("");
-                
-            }
-                return Integer.parseInt(etrin);
         }
         
         public double dosCS(double number){
