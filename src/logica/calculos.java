@@ -243,6 +243,8 @@ public class calculos {
         }
         
         
+        
+        
         public int cifras(double number){
             String etrin = String.valueOf(number);
             int numerito = (int) number;

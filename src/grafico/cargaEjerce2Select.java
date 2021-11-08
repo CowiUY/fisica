@@ -530,49 +530,19 @@ public class cargaEjerce2Select extends javax.swing.JFrame {
             double carga;
             
             if (i == 1){
-                System.out.println("");
-                System.out.println("");
-                System.out.println("");
-                System.out.println("");
-                System.out.println("");
-                System.out.println("");
-                System.out.println("");
-                System.out.println("HABEMUS CARGA NUEVA");
-                System.out.println("");
-                System.out.println("");
-                System.out.println("");
-                System.out.println("");
-                System.out.println("");
-                System.out.println("");
-                System.out.println("");
+                double usar = ResultadoCampoElec;
+                tieneE = pedrito.Everdad(usar);        
+                carga = usar;
                 
-                
-                
-                tieneE = pedrito.Everdad(carga1);        
-                carga = carga1;
-                
-                base = carga1;
+                base = usar;
                 
             }else{
+                double usar = ResultadoPotencialElectrico;
+                tieneE = pedrito.Everdad(usar);        
+                carga = usar;
                 
-                System.out.println("");
-                System.out.println("");
-                System.out.println("");
-                System.out.println("");
-                System.out.println("");
-                System.out.println("");
-                System.out.println("");
-                System.out.println("HABEMUS CARGA2 NUEVA");
-                System.out.println("");
-                System.out.println("");
-                System.out.println("");
-                System.out.println("");
-                System.out.println("");
-                System.out.println("");
-                System.out.println("");
-                tieneE = pedrito.Everdad(carga2);
-                carga = carga2;
-                base = carga2;
+                base = usar;
+                
             }
             
             
@@ -672,8 +642,21 @@ public class cargaEjerce2Select extends javax.swing.JFrame {
 
                         //exponente = pedrito.tiene0(temporal);
 
+                        String strBase = String.valueOf(base);
                         //base = pedrito.cifras(base);
                         base = pedrito.dosCS(base);
+                        
+                        
+                        String strBaseResuelta = String.valueOf(base);
+                        
+                        if (strBase.length() > strBaseResuelta.length()){
+                                System.out.println("");
+                                System.out.println("");
+                                System.out.println("Base > Base Resuelta");
+                           int exponenteResuelto= strBase.length() - strBaseResuelta.length();
+                           exponente += exponenteResuelto;
+                        }
+                        
                         //exponente += pedrito.cifrasExp(pedrito.hayEBase(carga, tieneE));
                     }
 
