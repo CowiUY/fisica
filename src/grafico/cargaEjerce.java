@@ -183,14 +183,13 @@ FondoPanel fondo = new FondoPanel();
     }//GEN-LAST:event_InputDistanciaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-    calculos pedrito = new calculos();
-
+        calculos pedrito = new calculos();
         double carga1 = pedrito.Potencia(Double.parseDouble(InputCarga.getText().trim()), Double.parseDouble(potenciaCarga1.getText().trim()));
         
         
         double distanciaCarga = pedrito.Potencia(Double.parseDouble(InputDistancia.getText().trim()), Double.parseDouble(potenciaCarga2.getText().trim()));
-        
-        //Se guardan todos los datos del formulario en Datos
+        if(distanciaCarga > 0){
+            //Se guardan todos los datos del formulario en Datos
         unidades Datos = new unidades(carga1, distanciaCarga);
         
         
@@ -356,6 +355,16 @@ FondoPanel fondo = new FondoPanel();
         pagResultados.CargaImagen.setIcon(new ImageIcon(Carga));
         
         dispose();
+        }else{
+            JOptionPane.showMessageDialog(this,"La distancia hacia el punto no puede ser negativa ni 0");
+                distanciaCarga=0;
+        } 
+
+        
+
+        
+        
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
