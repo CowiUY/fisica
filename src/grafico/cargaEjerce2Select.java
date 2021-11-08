@@ -521,89 +521,84 @@ public class cargaEjerce2Select extends javax.swing.JFrame {
             
             System.out.println("carga = "+carga);
         if (tieneE == 0){
-            
-            
-            if (carga >= 1){
-                System.out.println("carga mayor o igual a 1");
-                System.out.println("Entra a método exponente tiene 0 "+carga);
-                if (pedrito.tiene0(carga) == carga){
-                    exponente = 0;
-                }else{
-                exponente = pedrito.tiene0(carga);    
-                }
-                
-                
-                System.out.println("Entra a método base tiene 0 "+carga);
-                base = pedrito.tiene0(carga);
-                
-                //System.out.println(pedrito.tiene0(0.125));
-                    
-                
-                
-            }else if (carga > 0 && carga < 1){// carga >0 && carga <1
-                System.out.println("carga mayor a 0 menor a 1");
-                
-                //SI el número es 0. algo
-            exponente = pedrito.RobertoGomez(carga);
-            
-            if (exponente > 0){    
-            
-                for(int d = 0; d < exponente; d++){
-                    base = base *10;
-                    System.out.println("");
-                    System.out.println(base);
-                }
-            }else{
-                for(int d = 0; d > exponente; d--){
-                    base = base *10;
-                    System.out.println("");
-                    System.out.println(base);
-                }
-            }
-                
-                
-                
-                
-                
-            
-            }else if (carga <0){
-                        System.out.println("Menor a 0");
-                        exponente = pedrito.tiene0(carga);
-                base = pedrito.tiene0Base(carga);
+
+
+                        if (carga >= 1){
+                            System.out.println("carga mayor o igual a 1");
+
+                            if (pedrito.tiene0(carga) == carga){
+                                exponente = 0;
+                            }else{
+                                exponente = pedrito.tiene0(carga);
+                            }
+
+                            base = pedrito.tiene0(carga);
+                            System.out.println("Base = "+base);
+
+                        }else if (carga > 0 && carga < 1){// carga >0 && carga <1
+                            System.out.println("carga mayor a 0 menor a 1");
+
+                            //SI el número es 0. algo
+                            exponente = pedrito.RobertoGomez(carga);
+
+                            if (exponente > 0){
+
+                                for(int d = 0; d < exponente; d++){
+                                    base = base *10;
+                                    System.out.println("");
+                                    System.out.println(base);
+                                }
+                            }else{
+                                for(int d = 0; d > exponente; d--){
+                                    base = base *10;
+                                    System.out.println("");
+                                    System.out.println(base);
+                                }
+                            }
+
+
+
+
+
+
+                        }else if (carga <0){
+                            System.out.println("Menor a 0");
+                            exponente = pedrito.tiene0(carga);
+                            base = pedrito.tiene0Base(carga);
                         }
-            
-            
-            
-        }else{
-            System.out.println("Carga tiene E");
-                
-            //double temporal = pedrito.hayEBase(carga, tieneE);
-            
-            exponente = (int) pedrito.hayExponente(carga, tieneE);
-            base = pedrito.hayEBase(carga, tieneE);
-            System.out.println("");
-            System.out.println("Carga antes de entrar "+base);
-            System.out.println("");
-            
-            //exponente = pedrito.tiene0(temporal);
-            
-            //base = pedrito.cifras(base);
-            base = pedrito.dosCS(base);
-            //exponente += pedrito.cifrasExp(pedrito.hayEBase(carga, tieneE));
-        }
-            
-        
-        System.out.println("base "+base);
-        System.out.println("exponente "+exponente);
-                
-                if (i == 1){
-                ResultadoCampoElec = base;
-                ExponenteCampoElec = exponente;
-            }else{
-                ResultadoPotencialElectrico = base;
-                ExponentePotencialElectrico = exponente;
-            }
-    }
+
+
+
+                    }else{
+                        System.out.println("Carga tiene E");
+
+                        //double temporal = pedrito.hayEBase(carga, tieneE);
+
+                        exponente = (int) pedrito.hayExponente(carga, tieneE);
+                        base = pedrito.hayEBase(carga, tieneE);
+                        System.out.println("");
+                        System.out.println("Carga antes de entrar "+base);
+                        System.out.println("");
+
+                        //exponente = pedrito.tiene0(temporal);
+
+                        //base = pedrito.cifras(base);
+                        base = pedrito.dosCS(base);
+                        //exponente += pedrito.cifrasExp(pedrito.hayEBase(carga, tieneE));
+                    }
+
+
+                    System.out.println("base "+base);
+                    System.out.println("exponente "+exponente);
+
+                    if (i == 1){
+                        ResultadoCampoElec = base;
+                        ExponenteCampoElec = exponente;
+                    }else{
+                        ResultadoPotencialElectrico = base;
+                        ExponentePotencialElectrico = exponente;
+                    }
+                }
         
         
         
